@@ -619,6 +619,7 @@
             ]
         },
         {
+            /* sequence 1 */
             "name": "gnome-builder",
             "buildsystem": "meson",
             "builddir": true,
