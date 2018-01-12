@@ -619,7 +619,7 @@
             ]
         },
         {
-            /* sequence 1 */
+            /* sequence 2 */
             "name": "gnome-builder",
             "buildsystem": "meson",
             "builddir": true,
