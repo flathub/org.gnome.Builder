@@ -601,7 +601,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/libdazzle",
+                    "url": "https://gitlab.gnome.org/GNOME/libdazzle.git",
                     "branch": "libdazzle-3-26"
                 }
             ]
@@ -629,7 +629,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/browse/gnome-builder",
+                    "url": "https://gitlab.gnome.org/GNOME/gnome-builder.git",
                     "branch": "gnome-builder-3-26"
                 }
             ]
