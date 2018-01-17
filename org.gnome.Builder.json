@@ -630,7 +630,7 @@
                 {
                     "type": "git",
                     "url": "https://git.gnome.org/browse/gnome-builder",
-                    "branch": "c278c7cc135a30b300480a3a06e2f080883a52e7"
+                    "branch": "gnome-builder-3-26"
                 }
             ]
         }
