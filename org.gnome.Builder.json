@@ -619,7 +619,7 @@
             ]
         },
         {
-            /* serial 1 */
+            /* serial 2 */
             "name": "gnome-builder",
             "buildsystem": "meson",
             "builddir": true,
