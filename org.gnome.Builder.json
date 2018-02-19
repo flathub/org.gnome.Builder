@@ -623,7 +623,6 @@
             "name": "gnome-builder",
             "buildsystem": "meson",
             "builddir": true,
-            "disable-shallow-clone": true,
             "config-opts": [ "--libdir=/app/lib",
                              "--buildtype=release",
                              "-Dwith_docs=true",
@@ -632,6 +631,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/gnome-builder.git",
+                    "disable-shallow-clone": true,
                     "branch": "gnome-builder-3-26"
                 }
             ]
