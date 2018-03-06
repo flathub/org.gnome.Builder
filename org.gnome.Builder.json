@@ -464,7 +464,7 @@
         },
         {
             "name": "libssh2",
-            "cmake": true,
+            "buildsystem": "cmake",
             "config-opts": [ "-DCMAKE_INSTALL_LIBDIR:PATH=/app/lib",
                              "-DBUILD_SHARED_LIBS:BOOL=ON" ],
             "sources": [
@@ -477,7 +477,7 @@
         },
         {
             "name": "libgit2",
-            "cmake": true,
+            "buildsystem": "cmake",
             "config-opts": [ "-DBUILD_SHARED_LIBS:BOOL=ON", "-DTHREADSAFE=ON" ],
             "sources": [
                 {
