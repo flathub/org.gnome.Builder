@@ -1,0 +1,4 @@
+{
+	/* builders are out of date and holding up release */
+	"skip-arches" : ["arm", "aarch64"]
+}
