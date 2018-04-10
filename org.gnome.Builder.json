@@ -765,12 +765,11 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/chergert/deviced.git",
-                    "branch" : "886a63b1bc85ed87fa74655973ca7fca56166478"
+                    "branch" : "aed2844195fadb186e8ab0a7bab6320ce72710d5"
                 }
             ]
         },
         {
-            /* serial 2 */
             "name" : "gnome-builder",
             "buildsystem" : "meson",
             "builddir" : true,
@@ -786,7 +785,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "dd5c76f9329c6496a581c7e9bfc6da43583e2fb4"
+                    "branch" : "fb610e201c70ad146d16cad80d84dbf6e249b144"
                 }
             ]
         }
