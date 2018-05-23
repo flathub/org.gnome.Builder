@@ -501,7 +501,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://git.gnome.org/browse/libpeas",
+                    "url" : "https://gitlab.gnome.org/GNOME/libpeas.git",
                     "branch" : "libpeas-1.22.0"
                 }
             ]
