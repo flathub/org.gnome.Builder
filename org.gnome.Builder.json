@@ -682,7 +682,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/ostreedev/ostree.git",
-                    "branch" : "v2018.2"
+                    "branch" : "v2018.5"
                 }
             ]
         },
@@ -711,7 +711,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak.git",
-                    "branch" : "0.11.3"
+                    "branch" : "0.11.7"
                 }
             ]
         },
@@ -721,7 +721,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak-builder",
-                    "branch" : "0.10.9"
+                    "branch" : "0.10.10"
                 }
             ]
         },
