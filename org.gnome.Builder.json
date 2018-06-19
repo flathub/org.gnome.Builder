@@ -769,7 +769,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/chergert/deviced.git",
-                    "branch" : "aed2844195fadb186e8ab0a7bab6320ce72710d5"
+                    "branch" : "c763f6624c5acaf7e003b3e132ae5c3e7ea96a43"
                 }
             ]
         },
@@ -789,7 +789,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "28eb31b0ea7671c5fc7bc0ec295e7373f0e14373"
+                    "branch" : "dbb02428bc250064dbbaac021ffa8902904b9b9f"
                 }
             ]
         }
