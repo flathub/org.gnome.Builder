@@ -789,7 +789,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "dbb02428bc250064dbbaac021ffa8902904b9b9f"
+                    "branch" : "66a075786b3209b3b67b5eb243b5ef27517f0839"
                 }
             ]
         }
