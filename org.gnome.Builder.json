@@ -769,7 +769,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/chergert/deviced.git",
-                    "branch" : "c763f6624c5acaf7e003b3e132ae5c3e7ea96a43"
+                    "branch" : "fde4bd2a41031441240a6fe21fdab611c93de9af"
                 }
             ]
         },
