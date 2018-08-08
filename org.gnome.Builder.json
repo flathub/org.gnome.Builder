@@ -773,7 +773,6 @@
             ]
         },
         {
-            /* serial 4 */
             "name" : "gnome-builder",
             "buildsystem" : "meson",
             "builddir" : true,
@@ -789,7 +788,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "f57424c3c3422581e93130dbf2f1283fbb3d4326"
+                    "branch" : "c18a0d4409b9f168df3115cbf9ccf1f95151dcbf"
                 }
             ]
         }
