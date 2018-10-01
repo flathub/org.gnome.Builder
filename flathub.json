@@ -1,4 +1,3 @@
 {
-    /* skipping due to webkit build failures, until those are resolved */
     "skip-arches" : ["arm", "aarch64", "i386"]
 }
