@@ -198,7 +198,7 @@
             "name" : "libgit2-glib",
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized"
+                "--buildtype=release"
             ],
             "buildsystem" : "meson",
             "builddir" : true,
@@ -253,7 +253,7 @@
             "builddir" : true,
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized"
+                "--buildtype=release"
             ],
             "cleanup" : [
                 "/bin/*",
@@ -280,7 +280,7 @@
             ],
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized"
+                "--buildtype=release"
             ],
             "sources" : [
                 {
@@ -329,7 +329,7 @@
             "name" : "sysprof",
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized",
+                "--buildtype=release",
                 "-Denable_gtk=true",
                 "-Dwith_sysprofd=host"
             ],
@@ -354,7 +354,7 @@
             "name" : "template-glib",
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized"
+                "--buildtype=release"
             ],
             "buildsystem" : "meson",
             "builddir" : true,
@@ -370,7 +370,7 @@
             "name" : "jsonrpc-glib",
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized"
+                "--buildtype=release"
             ],
             "buildsystem" : "meson",
             "builddir" : true,
@@ -378,7 +378,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/jsonrpc-glib.git",
-                    "branch" : "3.30.0"
+                    "branch" : "jsonrpc-glib-3-30"
                 }
             ]
         },
@@ -386,7 +386,7 @@
             "name" : "libdazzle",
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized"
+                "--buildtype=release"
             ],
             "buildsystem" : "meson",
             "builddir" : true,
@@ -497,7 +497,7 @@
             "name" : "deviced",
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized",
+                "--buildtype=release",
                 "-Ddaemon=false",
                 "-Dtools=false"
             ],
@@ -507,7 +507,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/chergert/deviced.git",
-                    "branch" : "fde4bd2a41031441240a6fe21fdab611c93de9af"
+                    "branch" : "a246f2492a890a6b982927fee66fc7dcec09bb85"
                 }
             ]
         },
