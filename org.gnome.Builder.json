@@ -414,7 +414,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libdazzle.git",
-                    "branch" : "3.32.0"
+                    "branch" : "efdab415080e58d941a6ffac451a9ed7404a1a56"
                 }
             ]
         },
