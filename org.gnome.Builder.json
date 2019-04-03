@@ -565,6 +565,7 @@
                 "-Dtracing=false",
                 "-Dhelp=true",
                 "-Dchannel=flatpak-stable",
+                "-Dplugin_podman=true",
                 "-Dplugin_deviced=true"
             ],
             "cleanup" : [
@@ -577,7 +578,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "9bce30fa6a8dc499219a4bb40478f56417ba823c"
+                    "branch" : "4b3e3c0d6e687ef9685447077b3bd9bdac93c59f"
                 }
             ]
         }
