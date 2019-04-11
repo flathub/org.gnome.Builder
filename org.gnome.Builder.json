@@ -414,7 +414,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libdazzle.git",
-                    "branch" : "efdab415080e58d941a6ffac451a9ed7404a1a56"
+                    "branch" : "libdazzle-3-32"
                 }
             ]
         },
@@ -578,7 +578,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "4b3e3c0d6e687ef9685447077b3bd9bdac93c59f"
+                    "branch" : "6691743e0dd3434a46b6ca09392212c04284dac3"
                 }
             ]
         }
