@@ -591,7 +591,7 @@
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
 		    /* 3.33.1 plus some patches */
-                    "branch" : "e27458dbeab4d1e394c5d14ee5ca3df04784b710"
+                    "branch" : "daaa8afb731d0057e7d05be646b66321a48eb40e"
                 }
             ]
         }
