@@ -246,7 +246,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git",
-                    "branch" : "4.2.1"
+                    "branch" : "gtksourceview-4-2"
                 }
             ]
         },
