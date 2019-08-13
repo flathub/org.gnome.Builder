@@ -14,17 +14,15 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--socket=ssh-auth",
+        "--socket=session-bus",
+        "--socket=system-bus",
         "--filesystem=home",
         "--filesystem=host",
         "--share=network",
         "--talk-name=org.gtk.vfs.*",
         "--system-talk-name=org.freedesktop.PolicyKit1",
-        "--system-talk-name=org.gnome.Sysprof2",
+        "--system-talk-name=org.gnome.Sysprof3",
         "--talk-name=org.gnome.CodeAssist.v1.*",
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
         "--system-talk-name=org.freedesktop.Avahi",
         "--talk-name=org.freedesktop.FileManager1",
         "--talk-name=org.gnome.SettingsDaemon.Color",
@@ -34,6 +32,7 @@
         "--filesystem=~/.local/share/flatpak",
         "--filesystem=xdg-data/meson",
         "--filesystem=/var/lib/flatpak",
+        "--metadata=X-DConf=migrate-path=/org/gnome/builder/",
         "--env=G_SLICE=always-malloc"
     ],
     "x-run-args" : [
@@ -134,13 +133,29 @@
             ]
         },
         {
+            "name": "intltool",
+            "cleanup": [ "*" ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
+                    "sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
+                }
+            ]
+        },
+        {
             "name" : "polkit",
             "config-opts" : [
                 "--disable-polkitd",
                 "--disable-man-pages",
                 "--disable-introspection",
-                "--enable-libsystemd-login=no",
-                "--with-systemdsystemunitdir=no"
+                "--disable-examples",
+                "--disable-gtk-doc",
+                "--disable-libelogind",
+                "--disable-libsystemd-login",
+                "--with-systemdsystemunitdir=no",
+                "--with-authdb=dummy",
+                "--with-authfw=none"
             ],
             "rm-configure" : true,
             "cleanup" : [
@@ -154,8 +169,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "http://www.freedesktop.org/software/polkit/releases/polkit-0.113.tar.gz",
-                    "sha256" : "e1c095093c654951f78f8618d427faf91cf62abdefed98de40ff65eca6413c81"
+                    "url" : "https://www.freedesktop.org/software/polkit/releases/polkit-0.116.tar.gz",
+                    "sha256" : "88170c9e711e8db305a12fdb8234fac5706c61969b94e084d0f117d8ec5d34b1"
                 },
                 {
                     "type" : "patch",
@@ -232,6 +247,7 @@
         },
         {
             "name" : "libpeas",
+            "buildsystem" : "meson",
             "cleanup" : [
                 "/bin/*",
                 "/lib/peas-demo",
@@ -260,8 +276,9 @@
             "builddir" : true,
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/amtk.git"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/amtk/5.0/amtk-5.0.0.tar.xz",
+                    "sha256" : "12a996978a30b7b69a810ac0c5656d5cf2f58d9787b98a0c028ff1b64e8f31ff"
                 }
             ]
         },
@@ -336,34 +353,9 @@
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gspell.git",
-                    "branch" : "1.8.1"
-                }
-            ]
-        },
-        {
-            "name" : "sysprof",
-            "config-opts" : [
-                "--libdir=/app/lib",
-                "--buildtype=debugoptimized",
-                "-Denable_gtk=true",
-                "-Dwith_sysprofd=host"
-            ],
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "cleanup" : [
-                "/bin/*",
-                "/libexec/sysprof",
-                "/share/appdata",
-                "/share/applications",
-                "/share/metainfo",
-                "/share/mime/packages"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/sysprof.git"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.1.tar.xz",
+		    "sha256" : "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
                 }
             ]
         },
@@ -416,6 +408,31 @@
             ]
         },
         {
+            "name" : "sysprof",
+            "config-opts" : [
+                "--libdir=/app/lib",
+                "--buildtype=debugoptimized",
+                "-Denable_gtk=true",
+                "-Dwith_sysprofd=host"
+            ],
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "cleanup" : [
+                "/bin/*",
+                "/libexec/sysprof",
+                "/share/appdata",
+                "/share/applications",
+                "/share/metainfo",
+                "/share/mime/packages"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/sysprof.git"
+                }
+            ]
+        },
+        {
             "name" : "ostree",
             "config-opts" : [
                 "--disable-man",
@@ -431,8 +448,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/ostreedev/ostree/releases/download/v2019.1/libostree-2019.1.tar.xz",
-                    "sha256" : "15f734e7c65875f62c967b9937894704354a11927e92a91cb5ad8041bbb6c723"
+                    "url" : "https://github.com/ostreedev/ostree/releases/download/v2019.2/libostree-2019.2.tar.xz",
+		    "sha256" : "9e0051be1ec0f5642cc3ce56a404f7f9c78d6b74068b23e8dd465772c7cf6b59"
                 }
             ]
         },
@@ -464,8 +481,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/flatpak/flatpak/releases/download/1.2.4/flatpak-1.2.4.tar.xz",
-                    "sha256" : "1b6539d94d31e571661a2545cfcece7ec9267b4e2552e3cc0f617f4790f6c3e1"
+                    "url" : "https://github.com/flatpak/flatpak/releases/download/1.4.2/flatpak-1.4.2.tar.xz",
+		    "sha256" : "f2799a6d973a052529b52943021108f148706d3e69725ac7dd60bf6ac4bdd522"
                 }
             ]
         },
@@ -474,12 +491,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/flatpak/flatpak-builder/releases/download/1.0.6/flatpak-builder-1.0.6.tar.xz",
-                    "sha256" : "3b572ad7b7cce9ca6a8632ca69a49a47b20e99066fe064b7b56e7896dca789bb"
-                },
-                {
-                    "type" : "patch",
-                    "path" : "flatpak-builder-watch-bus.patch"
+                    "url" : "https://github.com/flatpak/flatpak-builder/releases/download/1.0.8/flatpak-builder-1.0.8.tar.xz",
+		    "sha256" : "22a4564e51eef11eb5de730682543ffdaaabb8542c9123a2dea34178c5de415b"
                 }
             ]
         },
@@ -526,6 +539,12 @@
                 "/share/metainfo",
                 "/bin/glade"
             ],
+            "config-opts" : [
+                "--libdir=/app/lib",
+                "--buildtype=debugoptimized"
+            ],
+            "buildsystem" : "meson",
+            "builddir" : true,
             "sources" : [
                 {
                     "type" : "git",
@@ -590,8 +609,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-		    /* 3.33.1 plus some patches */
-                    "branch" : "daaa8afb731d0057e7d05be646b66321a48eb40e"
+		    "branch" : "3.33.90"
                 }
             ]
         }
