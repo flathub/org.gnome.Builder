@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.Builder",
     "runtime" : "org.gnome.Sdk",
-    "runtime-version" : "master",
+    "runtime-version" : "3.34beta",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-builder",
     "desktop-file-name-prefix" : "(Beta) ",
@@ -113,14 +113,14 @@
                 "UDEV_RULES_PATH=/app/etc/udev/rules.d",
                 "INIT_D_PATH=/app/etc/init.d"
             ],
-            "cleanup" : [
-                "/bin/ulockmgr_server"
+            "post-install": [
+                "install -m a+rx fusermount-wrapper.sh /app/bin/fusermount"
             ],
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/libfuse/libfuse/releases/download/fuse-2.9.7/fuse-2.9.7.tar.gz",
-                    "sha256" : "832432d1ad4f833c20e13b57cf40ce5277a9d33e483205fc63c78111b3358874"
+                    "url" : "https://github.com/libfuse/libfuse/releases/download/fuse-2.9.9/fuse-2.9.9.tar.gz",
+                    "sha256" : "d0e69d5d608cc22ff4843791ad097f554dd32540ddc9bed7638cc6fea7c1b4b5"
                 },
                 {
                     "type" : "patch",
@@ -129,6 +129,10 @@
                 {
                     "type" : "patch",
                     "path" : "fuse-disable-sys-mount-under-flatpak.patch"
+                },
+                {
+                    "type" : "file",
+                    "path" : "fusermount-wrapper.sh"
                 }
             ]
         },
@@ -191,7 +195,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/universal-ctags/ctags.git"
+                    "url" : "https://github.com/universal-ctags/ctags.git",
+                    "branch" : "2614dbe1e6abc3e31b9cb016037d56b162d5db21"
                 }
             ]
         },
@@ -210,7 +215,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/libssh2/libssh2.git",
-                    "branch" : "libssh2-1.8.0"
+                    "branch" : "libssh2-1.9.0"
                 }
             ]
         },
@@ -226,7 +231,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/libgit2/libgit2.git",
-                    "branch" : "maint/v0.27"
+                    "branch" : "maint/v0.28"
                 }
             ]
         },
@@ -241,7 +246,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libgit2-glib.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/libgit2-glib.git",
+                    "branch" : "50ef1d47c01cb3d0a57d372c658f7e0a1b92c6aa"
                 }
             ]
         },
@@ -256,7 +262,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libpeas.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/libpeas.git",
+                    "branch" : "libpeas-1.24.0"
                 }
             ]
         },
@@ -266,7 +273,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git",
+                    "branch" : "4.4.0"
                 }
             ]
         },
@@ -302,7 +310,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/devhelp.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/devhelp.git",
+                    "branch" : "3.34.0"
                 }
             ]
         },
@@ -320,7 +329,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/json-glib.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/json-glib.git",
+                    "branch" : "1.4.4"
                 }
             ]
         },
@@ -355,7 +365,7 @@
                 {
                     "type" : "archive",
                     "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.1.tar.xz",
-		    "sha256" : "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
+                    "sha256" : "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
                 }
             ]
         },
@@ -370,7 +380,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/template-glib.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/template-glib.git",
+                    "branch" : "3.34.0"
                 }
             ]
         },
@@ -385,7 +396,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/jsonrpc-glib.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/jsonrpc-glib.git",
+                    "branch" : "3.34.0"
                 }
             ]
         },
@@ -403,7 +415,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libdazzle.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/libdazzle.git",
+                    "branch" : "3.34.0"
                 }
             ]
         },
@@ -428,7 +441,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/sysprof.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
+                    "branch" : "sysprof-3.34.0"
                 }
             ]
         },
@@ -447,9 +461,9 @@
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://github.com/ostreedev/ostree/releases/download/v2019.2/libostree-2019.2.tar.xz",
-		    "sha256" : "9e0051be1ec0f5642cc3ce56a404f7f9c78d6b74068b23e8dd465772c7cf6b59"
+                    "type" : "git",
+                    "url" : "https://github.com/ostreedev/ostree.git",
+                    "branch" : "v2019.3"
                 }
             ]
         },
@@ -480,9 +494,9 @@
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://github.com/flatpak/flatpak/releases/download/1.4.2/flatpak-1.4.2.tar.xz",
-		    "sha256" : "f2799a6d973a052529b52943021108f148706d3e69725ac7dd60bf6ac4bdd522"
+                    "type" : "git",
+                    "url" : "https://github.com/flatpak/flatpak.git",
+                    "branch" : "1.4.2"
                 }
             ]
         },
@@ -490,9 +504,9 @@
             "name" : "flatpak-builder",
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://github.com/flatpak/flatpak-builder/releases/download/1.0.8/flatpak-builder-1.0.8.tar.xz",
-		    "sha256" : "22a4564e51eef11eb5de730682543ffdaaabb8542c9123a2dea34178c5de415b"
+                    "type" : "git",
+                    "url" : "https://github.com/flatpak/flatpak-builder.git",
+                    "branch" : "1.0.8"
                 }
             ]
         },
@@ -548,7 +562,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/glade.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/glade.git",
+                    "branch" : "1ac86acf57f92c86514013e7f1690b24a8dcf54c"
                 }
             ]
         },
@@ -577,7 +592,6 @@
                 "--libdir=lib",
                 "--buildtype=debugoptimized",
                 "-Dctags_path=/app/bin/ctags",
-                "-Dfusermount_wrapper=true",
                 "-Dtcmalloc=true",
                 "-Dpython_libprefix=python3.7",
                 "-Dtracing=true",
@@ -595,7 +609,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-		    "branch" : "3.33.90"
+                    "branch" : "3.34.0"
                 }
             ]
         }
