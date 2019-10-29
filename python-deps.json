@@ -17,8 +17,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/55/54/da994f359e4e7da4776a200e76dbc85ba5fc319eefc22e33d55296d95a1d/jedi-0.15.1-py2.py3-none-any.whl",
-                    "sha256": "786b6c3d80e2f06fd77162a07fed81b8baa22dde5d62896a790a331d6ac21a27"
+                    "url": "https://files.pythonhosted.org/packages/c2/bc/54d53f5bc4658380d0eca9055d72be4df45e5bfd91a4bac97da224a92553/jedi-0.13.2-py2.py3-none-any.whl",
+                    "sha256": "c8481b5e59d34a5c7c42e98f6625e633f6ef59353abea6437472c7ec2093f191"
                 }
             ]
         },
