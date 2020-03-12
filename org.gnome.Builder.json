@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.Builder",
     "runtime" : "org.gnome.Sdk",
-    "runtime-version" : "3.34",
+    "runtime-version" : "3.36",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-builder",
     "finish-args" : [
@@ -108,6 +108,9 @@
             "config-opts" : [
                 "UDEV_RULES_PATH=/app/etc/udev/rules.d",
                 "INIT_D_PATH=/app/etc/init.d"
+            ],
+            "cleanup" : [
+                "/bin/ulockmgr_server"
             ],
             "post-install": [
                 "install -m a+rx fusermount-wrapper.sh /app/bin/fusermount"
@@ -232,7 +235,23 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libgit2-glib.git",
-                    "branch" : "50ef1d47c01cb3d0a57d372c658f7e0a1b92c6aa"
+                    "branch" : "f231fb6f5da4784f6ebb6ecabc83c07bcf55321e"
+                }
+            ]
+        },
+        {
+            "name" : "vte",
+            "buildsystem" : "meson",
+            "build-options" : {
+                "env" : {
+                    "CXXFLAGS" : "-fno-exceptions"
+                }
+            },
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/vte.git",
+                    "branch" : "0.59.92"
                 }
             ]
         },
@@ -248,18 +267,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "branch" : "libpeas-1.24.0"
-                }
-            ]
-        },
-        {
-            "name" : "gtksourceview",
-            "buildsystem" : "meson",
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git",
-                    "branch" : "4.4.0"
+                    "branch" : "libpeas-1.26.0"
                 }
             ]
         },
@@ -296,7 +304,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/devhelp.git",
-                    "branch" : "3.34.0"
+                    "branch" : "3.36.0"
                 }
             ]
         },
@@ -315,7 +323,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/json-glib.git",
-                    "branch" : "1.4.4"
+                    "branch" : "b0f71e24fa82d90cf264a714031cebab015e4013"
                 }
             ]
         },
@@ -401,7 +409,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libdazzle.git",
-                    "branch" : "3.34.1"
+                    "branch" : "3.36.0"
                 }
             ]
         },
@@ -427,7 +435,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
-                    "branch" : "sysprof-3.34.0"
+                    "branch" : "sysprof-3.36.0"
                 }
             ]
         },
@@ -448,7 +456,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/ostreedev/ostree.git",
-                    "branch" : "v2019.3"
+                    "branch" : "v2020.2"
                 }
             ]
         },
@@ -482,7 +490,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak.git",
-                    "branch" : "1.4.2"
+                    "branch" : "1.6.2"
                 }
             ]
         },
@@ -492,14 +500,14 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak-builder.git",
-                    "branch" : "1.0.8"
+                    "branch" : "1.0.9"
                 }
             ]
         },
         {
             "name" : "avahi",
             "cleanup" : [
-                "/bin"
+                "/bin/avahi-*"
             ],
             "config-opts" : [
                 "--with-distro=none",
@@ -549,7 +557,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/glade.git",
-                    "branch" : "1ac86acf57f92c86514013e7f1690b24a8dcf54c"
+                    "branch" : "0572a962649757d4a62584ef312d78131fc06036"
                 }
             ]
         },
@@ -566,7 +574,45 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/chergert/deviced.git"
+                    "url" : "https://gitlab.gnome.org/chergert/deviced.git",
+                    "branch" : "master"
+                }
+            ]
+        },
+        {
+            "name" : "gvls",
+            "config-opts" : [
+                "--libdir=/app/lib",
+                "--buildtype=release",
+                "-Dui=false",
+                "-Dui-tests=false",
+                "-Ddocs=false",
+                "-Dintrospection=false",
+                "-Dgedit-plugin=false"
+            ],
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/esodan/gvls.git",
+                    "branch": "gvls-0.14"
+                }
+            ]
+        },
+        {
+            "name" : "libportal",
+            "config-opts" : [
+                "--libdir=/app/lib",
+                "--buildtype=release"
+            ],
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/flatpak/libportal.git",
+                    "branch" : "61bbc5237ad4de8313107d9eb15fa0353e8fadde"
                 }
             ]
         },
@@ -578,13 +624,13 @@
                 "--libdir=lib",
                 "--buildtype=release",
                 "-Dctags_path=/app/bin/ctags",
+                "-Dfusermount_wrapper=false",
                 "-Dtcmalloc=true",
                 "-Dpython_libprefix=python3.7",
-                "-Dtracing=false",
+                "-Dtracing=true",
                 "-Dhelp=true",
-                "-Dchannel=flatpak-stable",
-                "-Dplugin_deviced=true",
-                "-Dplugin_podman=true"
+                "-Dchannel=flatpak-nightly",
+                "-Dplugin_deviced=true"
             ],
             "cleanup" : [
                 "/share/gnome-builder/gir-1.0",
@@ -596,7 +642,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "15932b35f4f15e89a1505f6c28f3c02ccaef5d8e"
+                    "branch" : "fc591b8c3527fe48a500d2f3aca214c84fec9fa7"
                 }
             ]
         }
