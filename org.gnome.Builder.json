@@ -435,7 +435,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
-                    "branch" : "sysprof-3.36.0"
+                    "branch" : "6f167d771afc93b1d47e25d7cfabc5faad151e02"
                 }
             ]
         },
