@@ -630,7 +630,8 @@
                 "-Dtracing=true",
                 "-Dhelp=true",
                 "-Dchannel=flatpak-nightly",
-                "-Dplugin_deviced=true"
+                "-Dplugin_deviced=true",
+                "-Dplugin_vala=true"
             ],
             "cleanup" : [
                 "/share/gnome-builder/gir-1.0",
