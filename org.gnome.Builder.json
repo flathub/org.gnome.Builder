@@ -629,7 +629,7 @@
                 "-Dpython_libprefix=python3.7",
                 "-Dtracing=true",
                 "-Dhelp=true",
-                "-Dchannel=flatpak-nightly",
+                "-Dchannel=flatpak-stable",
                 "-Dplugin_deviced=true",
                 "-Dplugin_vala=true"
             ],
