@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.Builder",
     "runtime" : "org.gnome.Sdk",
-    "runtime-version" : "3.36",
+    "runtime-version" : "3.38",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-builder",
     "finish-args" : [
@@ -267,7 +267,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "branch" : "libpeas-1.26.0"
+                    "branch" : "libpeas-1.28.0"
                 }
             ]
         },
@@ -278,8 +278,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/amtk/5.0/amtk-5.0.0.tar.xz",
-                    "sha256" : "12a996978a30b7b69a810ac0c5656d5cf2f58d9787b98a0c028ff1b64e8f31ff"
+                    "url" : "https://download.gnome.org/sources/amtk/5.2/amtk-5.2.0.tar.xz",
+                    "sha256" : "820545bb4cf87ecebc2c3638d6b6e58b8dbd60a419a9b43cf020124e5dad7078"
                 }
             ]
         },
@@ -304,7 +304,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/devhelp.git",
-                    "branch" : "3.36.0"
+                    "branch" : "3.38.0"
                 }
             ]
         },
@@ -323,7 +323,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/json-glib.git",
-                    "branch" : "b0f71e24fa82d90cf264a714031cebab015e4013"
+                    "branch" : "1.6.0"
                 }
             ]
         },
@@ -357,8 +357,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.1.tar.xz",
-                    "sha256" : "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
+                    "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.4.tar.xz",
+                    "sha256" : "cf4d16a716e813449bd631405dc1001ea89537b8cdae2b8abfb3999212bd43b4"
                 }
             ]
         },
@@ -390,7 +390,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/jsonrpc-glib.git",
-                    "branch" : "3.34.0"
+                    "branch" : "3.38.0"
                 }
             ]
         },
@@ -409,7 +409,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libdazzle.git",
-                    "branch" : "3.36.0"
+                    "branch" : "3.38.0"
                 }
             ]
         },
@@ -435,7 +435,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
-                    "branch" : "6f167d771afc93b1d47e25d7cfabc5faad151e02"
+                    "branch" : "3.38.0"
                 }
             ]
         },
@@ -456,7 +456,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/ostreedev/ostree.git",
-                    "branch" : "v2020.2"
+                    "branch" : "v2020.6"
                 }
             ]
         },
@@ -490,7 +490,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak.git",
-                    "branch" : "1.6.2"
+                    "branch" : "1.8.2"
                 }
             ]
         },
@@ -500,7 +500,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak-builder.git",
-                    "branch" : "1.0.9"
+                    "branch" : "1.0.11"
                 }
             ]
         },
@@ -557,7 +557,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/glade.git",
-                    "branch" : "0572a962649757d4a62584ef312d78131fc06036"
+                    "branch" : "glade-3-38"
                 }
             ]
         },
@@ -596,7 +596,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/esodan/gvls.git",
-                    "branch": "gvls-0.14"
+                    "branch": "gvls-0.16"
                 }
             ]
         },
@@ -612,7 +612,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/libportal.git",
-                    "branch" : "61bbc5237ad4de8313107d9eb15fa0353e8fadde"
+                    "branch" : "bff3289781ef27388e75f772d5fe9dee20fdfb53"
                 }
             ]
         },
@@ -643,7 +643,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "132ae753f1691a270a6fb85c231f41ab2a624370"
+                    "branch" : "3.38.0"
                 }
             ]
         }
