@@ -626,12 +626,11 @@
                 "-Dctags_path=/app/bin/ctags",
                 "-Dfusermount_wrapper=false",
                 "-Dtcmalloc=true",
-                "-Dpython_libprefix=python3.7",
-                "-Dtracing=true",
+                "-Dpython_libprefix=python3.8",
+                "-Dtracing=false",
                 "-Dhelp=true",
                 "-Dchannel=flatpak-stable",
-                "-Dplugin_deviced=true",
-                "-Dplugin_vala=true"
+                "-Dplugin_deviced=true"
             ],
             "cleanup" : [
                 "/share/gnome-builder/gir-1.0",
