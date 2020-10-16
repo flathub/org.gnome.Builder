@@ -435,7 +435,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
-                    "branch" : "3.38.0"
+                    "branch" : "3.38.1"
                 }
             ]
         },
@@ -642,7 +642,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "130f0df66184ec5df9871007af6cbcc5c55f879e"
+                    "branch" : "3.38.1"
                 }
             ]
         }
