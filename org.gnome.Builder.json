@@ -1,9 +1,20 @@
 {
     "app-id" : "org.gnome.Builder",
     "runtime" : "org.gnome.Sdk",
-    "runtime-version" : "3.38",
+    "runtime-version" : "40",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-builder",
+    "add-extensions": {
+        "org.gnome.Builder.Plugin": {
+            "version": "40",
+            "directory": "extensions",
+            "add-ld-path": "lib",
+            "merge-dirs": "lib/gnome-builder/plugins",
+            "subdirectories": true,
+            "no-autodownload": true,
+            "autodelete": true
+        }
+    },
     "finish-args" : [
         "--require-version=1.0.0",
         "--allow=devel",
@@ -68,7 +79,18 @@
         "*.a"
     ],
     "modules" : [
-        "shared-modules/intltool/intltool-0.51.json",
+        {
+            /* keep this so local-build.sh works */
+            "name": "intltool",
+            "cleanup": [ "*" ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
+                    "sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
+                }
+            ]
+        },
         "python-deps.json",
         {
             "name" : "gperftools",
@@ -184,7 +206,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/universal-ctags/ctags.git",
-                    "branch" : "2614dbe1e6abc3e31b9cb016037d56b162d5db21"
+                    "branch" : "af3051279c8800d1641bdd27ab8cdb4c7fd4936d"
                 }
             ]
         },
@@ -219,7 +241,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/libgit2/libgit2.git",
-                    "branch" : "maint/v0.28"
+                    "branch" : "maint/v1.1"
                 }
             ]
         },
@@ -235,23 +257,18 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libgit2-glib.git",
-                    "branch" : "f231fb6f5da4784f6ebb6ecabc83c07bcf55321e"
+                    "branch" : "caa0b64d09a33ba9001c4e14e047b6e6cdfa0819"
                 }
             ]
         },
         {
             "name" : "vte",
             "buildsystem" : "meson",
-            "build-options" : {
-                "env" : {
-                    "CXXFLAGS" : "-fno-exceptions"
-                }
-            },
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/vte.git",
-                    "branch" : "0.59.92"
+                    "branch" : "0.64.0"
                 }
             ]
         },
@@ -267,19 +284,18 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "branch" : "libpeas-1.28.0"
+                    "branch" : "libpeas-1.30.0"
                 }
             ]
         },
         {
             "name" : "amtk",
-            "buildsystem" : "autotools",
-            "builddir" : true,
+            "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/amtk/5.2/amtk-5.2.0.tar.xz",
-                    "sha256" : "820545bb4cf87ecebc2c3638d6b6e58b8dbd60a419a9b43cf020124e5dad7078"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/amtk.git",
+                    "branch" : "5.3.1"
                 }
             ]
         },
@@ -323,21 +339,22 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/json-glib.git",
-                    "branch" : "1.6.0"
+                    "branch" : "1.6.2"
                 }
             ]
         },
         {
             "name" : "enchant",
+            "buildsystem" : "autotools",
             "cleanup" : [
                 "/bin",
                 "/share"
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://github.com/AbiWord/enchant/releases/download/v2.2.3/enchant-2.2.3.tar.gz",
-                    "sha256" : "abd8e915675cff54c0d4da5029d95c528362266557c61c7149d53fa069b8076d"
+                    "type" : "git",
+                    "url" : "https://github.com/AbiWord/enchant.git",
+                    "branch" : "v2.2.15"
                 }
             ]
         },
@@ -356,9 +373,9 @@
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.4.tar.xz",
-                    "sha256" : "cf4d16a716e813449bd631405dc1001ea89537b8cdae2b8abfb3999212bd43b4"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gspell.git",
+                    "sha256" : "1.9.1"
                 }
             ]
         },
@@ -409,7 +426,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libdazzle.git",
-                    "branch" : "3.38.0"
+                    "branch" : "3.40.0"
                 }
             ]
         },
@@ -435,7 +452,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
-                    "branch" : "3.38.1"
+                    "branch" : "3.40.1"
                 }
             ]
         },
@@ -456,7 +473,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/ostreedev/ostree.git",
-                    "branch" : "v2020.6"
+                    "branch" : "v2021.1"
                 }
             ]
         },
@@ -490,7 +507,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak.git",
-                    "branch" : "1.8.2"
+                    "branch" : "1.10.2"
                 }
             ]
         },
@@ -500,7 +517,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak-builder.git",
-                    "branch" : "1.0.11"
+                    "branch" : "1.0.12"
                 }
             ]
         },
@@ -596,7 +613,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/esodan/gvls.git",
-                    "branch": "gvls-0.16"
+                    "branch": "gvls-19.0"
                 }
             ]
         },
@@ -612,7 +629,21 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/libportal.git",
-                    "branch" : "bff3289781ef27388e75f772d5fe9dee20fdfb53"
+                    "branch" : "a609e06d0c4adc5c510cf9ac7b060db3d368e78f"
+                }
+            ]
+        },
+        {
+            "name": "html-tidy",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/htacg/tidy-html5.git",
+                    "branch" : "9f8d957e4d9c164b0aea10a36c7933d67517abb1"
                 }
             ]
         },
@@ -642,7 +673,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "3.38.2"
+                    "branch" : "1b935467586f2231ba550d960e00e38a4999df68"
                 }
             ]
         }
