@@ -508,6 +508,14 @@
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak.git",
                     "branch" : "1.10.2"
+                },
+                {
+                    "type" : "patch",
+                    "path" : "0001-flatpak-http-utils-push-custom-thread-local-main-context.patch"
+                },
+                {
+                    "type" : "patch",
+                    "path" : "0002-flatpak-custom-thread-mainloop-finish-pending-sources-when-r.patch"
                 }
             ]
         },
@@ -673,7 +681,7 @@
                     "disable-shallow-clone" : true,
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "3.40.1"
+                    "branch" : "c2da62e967b4851f0c711871f4aa5e282a95266b"
                 }
             ]
         }
