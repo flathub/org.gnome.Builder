@@ -375,7 +375,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gspell.git",
-                    "sha256" : "1.9.1"
+                    "branch" : "1.9.1"
                 }
             ]
         },
