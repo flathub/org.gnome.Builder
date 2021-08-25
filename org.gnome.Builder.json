@@ -663,7 +663,7 @@
                 {
                     "disable-shallow-clone" : true,
                     "type" : "git",
-                    "branch" : "41.beta",
+                    "branch" : "41.beta1",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git"
                 }
             ]
