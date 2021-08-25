@@ -1,10 +1,27 @@
 {
     "app-id" : "org.gnome.Builder",
     "runtime" : "org.gnome.Sdk",
-    "runtime-version" : "3.34beta",
+    "runtime-version" : "41beta",
     "sdk" : "org.gnome.Sdk",
+    "sdk-extensions" : [
+        "org.freedesktop.Sdk.Extension.llvm12"
+    ],
     "command" : "gnome-builder",
+    "tags" : [
+        "beta"
+    ],
     "desktop-file-name-prefix" : "(Beta) ",
+    "add-extensions": {
+        "org.gnome.Builder.Plugin": {
+            "version": "beta",
+            "directory": "extensions",
+            "add-ld-path": "lib",
+            "merge-dirs": "lib/gnome-builder/plugins",
+            "subdirectories": true,
+            "no-autodownload": true,
+            "autodelete": true
+        }
+    },
     "finish-args" : [
         "--require-version=1.0.0",
         "--allow=devel",
@@ -28,6 +45,7 @@
         "--talk-name=org.gnome.SettingsDaemon.Color",
         "--talk-name=org.freedesktop.PackageKit",
         "--talk-name=org.freedesktop.secrets",
+        "--filesystem=xdg-run/gvfsd",
         "--filesystem=xdg-run/keyring",
         "--filesystem=~/.local/share/flatpak",
         "--filesystem=xdg-data/meson",
@@ -44,7 +62,9 @@
             "BASH_COMPLETIONSDIR" : "/app/share/bash-completion/completions",
             "MOUNT_FUSE_PATH" : "../tmp/",
             "V" : "1"
-        }
+        },
+        "prepend-path": "/usr/lib/sdk/llvm12/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
     },
     "cleanup" : [
         "/bin/rst*",
@@ -74,6 +94,7 @@
     ],
     "modules" : [
         "python-deps.json",
+        "python3-jedi-language-server.json",
         {
             "name" : "gperftools",
             "cleanup" : [
@@ -102,8 +123,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/uncrustify/uncrustify/archive/uncrustify-0.66.1.tar.gz",
-                    "sha256" : "0862778fb692ce9859f4ece5e801db72841d8d76d9304e2da52bdd098b05331f"
+                    "url" : "https://github.com/uncrustify/uncrustify/archive/uncrustify-0.71.0.tar.gz",
+                    "sha256" : "403a0f34463c0d6b0fbf230d8a03b7af9f493faa235208417793350db062003c"
                 }
             ]
         },
@@ -112,6 +133,9 @@
             "config-opts" : [
                 "UDEV_RULES_PATH=/app/etc/udev/rules.d",
                 "INIT_D_PATH=/app/etc/init.d"
+            ],
+            "cleanup" : [
+                "/bin/ulockmgr_server"
             ],
             "post-install": [
                 "install -m a+rx fusermount-wrapper.sh /app/bin/fusermount"
@@ -195,8 +219,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/universal-ctags/ctags.git",
-                    "branch" : "2614dbe1e6abc3e31b9cb016037d56b162d5db21"
+                    "url" : "https://github.com/universal-ctags/ctags.git"
                 }
             ]
         },
@@ -246,8 +269,17 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libgit2-glib.git",
-                    "branch" : "50ef1d47c01cb3d0a57d372c658f7e0a1b92c6aa"
+                    "url" : "https://gitlab.gnome.org/GNOME/libgit2-glib.git"
+                }
+            ]
+        },
+        {
+            "name" : "vte",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/vte.git"
                 }
             ]
         },
@@ -262,31 +294,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "branch" : "libpeas-1.24.0"
-                }
-            ]
-        },
-        {
-            "name" : "gtksourceview",
-            "buildsystem" : "meson",
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git",
-                    "branch" : "4.4.0"
-                }
-            ]
-        },
-        {
-            "name" : "amtk",
-            "buildsystem" : "autotools",
-            "builddir" : true,
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/amtk/5.0/amtk-5.0.0.tar.xz",
-                    "sha256" : "12a996978a30b7b69a810ac0c5656d5cf2f58d9787b98a0c028ff1b64e8f31ff"
+                    "url" : "https://gitlab.gnome.org/GNOME/libpeas.git"
                 }
             ]
         },
@@ -296,7 +304,8 @@
             "builddir" : true,
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized"
+                "--buildtype=debugoptimized",
+                "-Dflatpak_build=true"
             ],
             "cleanup" : [
                 "/bin/*",
@@ -311,40 +320,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/devhelp.git",
-                    "branch" : "3.34.0"
-                }
-            ]
-        },
-        {
-            "name" : "json-glib",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "cleanup" : [
-                "/bin"
-            ],
-            "config-opts" : [
-                "--libdir=/app/lib",
-                "--buildtype=debugoptimized"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/json-glib.git",
-                    "branch" : "1.4.4"
-                }
-            ]
-        },
-        {
-            "name" : "enchant",
-            "cleanup" : [
-                "/bin",
-                "/share"
-            ],
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://github.com/AbiWord/enchant/releases/download/v2.2.3/enchant-2.2.3.tar.gz",
-                    "sha256" : "abd8e915675cff54c0d4da5029d95c528362266557c61c7149d53fa069b8076d"
+                    "branch" : "main"
                 }
             ]
         },
@@ -365,7 +341,7 @@
                 {
                     "type" : "archive",
                     "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.1.tar.xz",
-                    "sha256" : "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
+		    "sha256" : "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
                 }
             ]
         },
@@ -380,8 +356,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/template-glib.git",
-                    "branch" : "3.34.0"
+                    "url" : "https://gitlab.gnome.org/GNOME/template-glib.git"
                 }
             ]
         },
@@ -396,8 +371,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/jsonrpc-glib.git",
-                    "branch" : "3.34.0"
+                    "url" : "https://gitlab.gnome.org/GNOME/jsonrpc-glib.git"
                 }
             ]
         },
@@ -415,8 +389,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libdazzle.git",
-                    "branch" : "3.34.0"
+                    "url" : "https://gitlab.gnome.org/GNOME/libdazzle.git"
                 }
             ]
         },
@@ -441,8 +414,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
-                    "branch" : "sysprof-3.34.0"
+                    "url" : "https://gitlab.gnome.org/GNOME/sysprof.git"
                 }
             ]
         },
@@ -463,7 +435,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/ostreedev/ostree.git",
-                    "branch" : "v2019.3"
+                    "branch" : "main"
                 }
             ]
         },
@@ -474,7 +446,8 @@
                 "--disable-seccomp",
                 "--disable-sandboxed-triggers",
                 "--disable-system-helper",
-                "--with-system-install-dir=/var/lib/flatpak"
+                "--with-system-install-dir=/var/lib/flatpak",
+                "--sysconfdir=/var/run/host/etc"
             ],
             "cleanup" : [
                 "/bin/flatpak-bisect",
@@ -495,8 +468,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/flatpak/flatpak.git",
-                    "branch" : "1.4.2"
+                    "url" : "https://github.com/flatpak/flatpak.git"
                 }
             ]
         },
@@ -505,15 +477,14 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/flatpak/flatpak-builder.git",
-                    "branch" : "1.0.8"
+                    "url" : "https://github.com/flatpak/flatpak-builder.git"
                 }
             ]
         },
         {
             "name" : "avahi",
             "cleanup" : [
-                "/bin"
+                "/bin/avahi-*"
             ],
             "config-opts" : [
                 "--with-distro=none",
@@ -562,8 +533,7 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/glade.git",
-                    "branch" : "1ac86acf57f92c86514013e7f1690b24a8dcf54c"
+                    "url" : "https://gitlab.gnome.org/GNOME/glade.git"
                 }
             ]
         },
@@ -585,6 +555,92 @@
             ]
         },
         {
+            "name" : "vala-language-server",
+            "config-opts" : [
+                "--libdir=/app/lib",
+                "--buildtype=debugoptimized",
+                "-Dman-pages=disabled",
+                "-Dtests=false",
+                "-Dplugins=false"
+            ],
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/Prince781/vala-language-server.git"
+                }
+            ]
+        },
+        {
+            "name" : "gvls",
+            "config-opts" : [
+                "--libdir=/app/lib",
+                "--buildtype=debugoptimized",
+                "-Dui=false",
+                "-Dui-tests=false",
+                "-Ddocs=false",
+                "-Dintrospection=false",
+                "-Dgedit-plugin=false"
+            ],
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/esodan/gvls.git",
+                    "branch": "gvls-20.0"
+                }
+            ]
+        },
+        {
+            "name" : "libportal",
+            "config-opts" : [
+                "--libdir=/app/lib",
+                "--buildtype=debugoptimized"
+            ],
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/flatpak/libportal.git"
+                }
+            ]
+        },
+        {
+            "name": "html-tidy",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_SHARED_LIB=OFF"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/htacg/tidy-html5.git"
+                }
+            ]
+        },
+        {
+            "name" : "cmark",
+            "buildsystem" : "cmake-ninja",
+            "builddir" : true,
+            "config-opts" : [
+              "-DCMARK_TESTS=OFF",
+              "-DCMARK_SHARED=OFF"
+            ],
+            "cleanup" : [
+                "/bin/cmark"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/commonmark/cmark"
+                }
+            ]
+        },
+        {
             "name" : "gnome-builder",
             "buildsystem" : "meson",
             "builddir" : true,
@@ -593,7 +649,6 @@
                 "--buildtype=debugoptimized",
                 "-Dctags_path=/app/bin/ctags",
                 "-Dtcmalloc=true",
-                "-Dpython_libprefix=python3.7",
                 "-Dtracing=true",
                 "-Dhelp=true",
                 "-Dchannel=flatpak-nightly",
@@ -608,8 +663,8 @@
                 {
                     "disable-shallow-clone" : true,
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "branch" : "3.34.0"
+                    "branch" : "41.beta",
+                    "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git"
                 }
             ]
         }

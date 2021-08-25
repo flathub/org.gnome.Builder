@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
-BRANCH=beta
-STATE_DIR="--state-dir=${HOME}/.cache/gnome-builder/flatpak-builder/"
-
 rm -f org.gnome.Builder.flatpak
 rm -rf _build ; mkdir _build
 rm -rf _repo ; mkdir _repo
 
-flatpak-builder "${STATE_DIR}" --ccache --force-clean _build org.gnome.Builder.json --repo=_repo "--default-branch=${BRANCH}"
-flatpak build-bundle _repo org.gnome.Builder.flatpak org.gnome.Builder "${BRANCH}"
+STATE_DIR=~/.cache/gnome-builder/flatpak-builder
+BRANCH=master
+
+flatpak-builder \
+    --ccache --force-clean \
+    --repo=_repo --state-dir=$STATE_DIR \
+    --default-branch=$BRANCH \
+    _build org.gnome.Builder.json
+
+flatpak build-bundle \
+    _repo org.gnome.Builder.flatpak org.gnome.Builder $BRANCH
 
