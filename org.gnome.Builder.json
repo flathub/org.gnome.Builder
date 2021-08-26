@@ -651,7 +651,7 @@
                 "-Dtcmalloc=true",
                 "-Dtracing=true",
                 "-Dhelp=true",
-                "-Dchannel=flatpak-nightly",
+                "-Dchannel=flatpak-beta",
                 "-Dplugin_deviced=true"
             ],
             "cleanup" : [
