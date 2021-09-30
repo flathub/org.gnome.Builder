@@ -672,6 +672,13 @@
                     "commit" : "66e7ef9f2a98fcddb7caf7c10749ae2bedc49a44",
                     "disable-shallow-clone" : true
                 }
+            ],
+            "post-install" : [
+                "cp -a /usr/lib/sdk/llvm12/bin/* /app/bin/",
+                "cp -a /usr/lib/sdk/llvm12/lib/* /app/lib/",
+                "cp -a /usr/lib/sdk/llvm12/libexec/* /app/libexec/",
+                "cp -a /usr/lib/sdk/llvm12/include/* /app/include/",
+                "cp -a /usr/lib/sdk/llvm12/share/* /app/share/"
             ]
         }
     ]
