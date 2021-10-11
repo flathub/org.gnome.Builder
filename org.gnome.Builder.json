@@ -669,7 +669,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "commit" : "66e7ef9f2a98fcddb7caf7c10749ae2bedc49a44",
+                    "commit" : "06a9847ec9d67b0b4d6f07f3672159559f0d5373",
                     "disable-shallow-clone" : true
                 }
             ],
