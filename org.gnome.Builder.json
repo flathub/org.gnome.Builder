@@ -1,21 +1,22 @@
 {
     "app-id" : "org.gnome.Builder",
     "runtime" : "org.gnome.Sdk",
-    "runtime-version" : "41",
+    "runtime-version" : "42",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
-        "org.freedesktop.Sdk.Extension.llvm12"
+        "org.freedesktop.Sdk.Extension.llvm12",
+        "org.freedesktop.Sdk.Extension.node14"
     ],
     "command" : "gnome-builder",
-    "add-extensions": {
-        "org.gnome.Builder.Plugin": {
-            "version": "stable",
-            "directory": "extensions",
-            "add-ld-path": "lib",
-            "merge-dirs": "lib/gnome-builder/plugins",
-            "subdirectories": true,
-            "no-autodownload": true,
-            "autodelete": true
+    "add-extensions" : {
+        "org.gnome.Builder.Plugin" : {
+            "version" : "stable",
+            "directory" : "extensions",
+            "add-ld-path" : "lib",
+            "merge-dirs" : "lib/gnome-builder/plugins",
+            "subdirectories" : true,
+            "no-autodownload" : true,
+            "autodelete" : true
         }
     },
     "finish-args" : [
@@ -38,7 +39,6 @@
         "--talk-name=org.gnome.CodeAssist.v1.*",
         "--system-talk-name=org.freedesktop.Avahi",
         "--talk-name=org.freedesktop.FileManager1",
-        "--talk-name=org.gnome.SettingsDaemon.Color",
         "--talk-name=org.freedesktop.PackageKit",
         "--talk-name=org.freedesktop.secrets",
         "--filesystem=xdg-run/gvfsd",
@@ -51,12 +51,12 @@
     ],
     "build-options" : {
         "env" : {
+            "V" : "1",
             "BASH_COMPLETIONSDIR" : "/app/share/bash-completion/completions",
-            "MOUNT_FUSE_PATH" : "../tmp/",
-            "V" : "1"
+            "MOUNT_FUSE_PATH" : "../tmp/"
         },
-        "prepend-path": "/usr/lib/sdk/llvm12/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
+        "prepend-path" : "/usr/lib/sdk/llvm12/bin",
+        "prepend-ld-library-path" : "/usr/lib/sdk/llvm12/lib"
     },
     "cleanup" : [
         "/bin/rst*",
@@ -67,13 +67,10 @@
         "/bin/update-desktop-database",
         "/bin/update-mime-database",
         "/bin/chardetect",
-        "/include",
         "/lib/avahi",
         "/lib/cmake",
         "/lib/gedit",
-        "/lib/pkgconfig",
         "/libexec/installed-tests",
-        "/share/pkgconfig",
         "/share/aclocal",
         "/man",
         "/share/man",
@@ -129,7 +126,7 @@
             "cleanup" : [
                 "/bin/ulockmgr_server"
             ],
-            "post-install": [
+            "post-install" : [
                 "install -m a+rx fusermount-wrapper.sh /app/bin/fusermount"
             ],
             "sources" : [
@@ -153,13 +150,15 @@
             ]
         },
         {
-            "name": "intltool",
-            "cleanup": [ "*" ],
-            "sources": [
+            "name" : "intltool",
+            "cleanup" : [
+                "*"
+            ],
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
-                    "sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
+                    "type" : "archive",
+                    "url" : "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
+                    "sha256" : "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
                 }
             ]
         },
@@ -241,13 +240,14 @@
             "config-opts" : [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DBUILD_SHARED_LIBS:BOOL=ON",
-                "-DTHREADSAFE=ON"
+                "-DUSE_SSH=ON",
+                "-DUSE_THREADS:BOOL=ON"
             ],
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://github.com/libgit2/libgit2.git",
-                    "tag" : "v1.2.0"
+                    "tag" : "v1.4.2"
                 }
             ]
         },
@@ -263,18 +263,21 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libgit2-glib.git",
-                    "commit" : "06899408a96cb0e24651cc1dc0c47e93e5a7d324"
+                    "tag" : "v1.0.0.1"
                 }
             ]
         },
         {
             "name" : "vte",
             "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dvapi=false"
+            ],
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag" : "0.66.0"
+                    "tag" : "0.66.2"
                 }
             ]
         },
@@ -290,7 +293,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "tag" : "libpeas-1.30.0"
+                    "tag" : "libpeas-1.32.0"
                 }
             ]
         },
@@ -316,7 +319,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/devhelp.git",
-                    "tag" : "41.1"
+                    "tag" : "41.2"
                 }
             ]
         },
@@ -336,8 +339,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.1.tar.xz",
-		    "sha256" : "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
+                    "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.4.tar.xz",
+                    "sha256" : "cf4d16a716e813449bd631405dc1001ea89537b8cdae2b8abfb3999212bd43b4"
                 }
             ]
         },
@@ -353,7 +356,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/template-glib.git",
-                    "tag" : "3.34.0"
+                    "tag" : "3.34.1"
                 }
             ]
         },
@@ -369,7 +372,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/jsonrpc-glib.git",
-                    "tag" : "3.40.0"
+                    "tag" : "3.42.0"
                 }
             ]
         },
@@ -388,7 +391,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libdazzle.git",
-                    "commit" : "1baded912ba4257db1f843aacf27442695c35413"
+                    "tag" : "3.44.0"
                 }
             ]
         },
@@ -414,7 +417,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
-                    "tag" : "b113c89af1de2f87589175795a197f6384852a78"
+                    "tag" : "3.44.0"
                 }
             ]
         },
@@ -435,7 +438,67 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/ostreedev/ostree.git",
-                    "tag" : "v2021.4"
+                    "tag" : "v2022.2"
+                }
+            ]
+        },
+        {
+            "name" : "libyaml",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/yaml/libyaml.git",
+                    "tag" : "0.2.5"
+                }
+            ]
+        },
+        {
+            "name" : "libxmlb",
+            "config-opts" : [
+                "--libdir=/app/lib",
+                "--buildtype=debugoptimized",
+                "-Dgtkdoc=false",
+                "-Dintrospection=false",
+                "-Dtests=false",
+                "-Dcli=false"
+            ],
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/hughsie/libxmlb.git",
+                    "tag" : "0.3.8"
+                }
+            ]
+        },
+        {
+            "name" : "libstemmer",
+            "buildsystem" : "cmake-ninja",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/zvelo/libstemmer",
+                    "tag" : "78c149a3a6f262a35c7f7351d3f77b725fc646cf"
+                }
+            ]
+        },
+        {
+            "name" : "appstream",
+            "config-opts" : [
+                "--libdir=/app/lib",
+                "--buildtype=debugoptimized",
+                "-Dgir=false",
+                "-Dapidocs=false",
+                "-Dinstall-docs=false"
+            ],
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/ximion/appstream.git",
+                    "tag" : "v0.15.2"
                 }
             ]
         },
@@ -468,17 +531,20 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak.git",
-                    "tag" : "1.11.3"
+                    "tag" : "1.13.2"
                 }
             ]
         },
         {
             "name" : "flatpak-builder",
+            "config-opts" : [
+                "--with-system-debugedit"
+            ],
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak-builder.git",
-                    "commit" : "e706b7df2834d1f7fe88ef801b9b578961492463"
+                    "tag" : "1.2.2"
                 }
             ]
         },
@@ -535,7 +601,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/glade.git",
-                    "commit" : "9381e38e1a6006a8f19e83cdb5fdef3c2f754cef"
+                    "commit" : "8d52d1ec3c706e8975eb48dfb59a0d145d55f803"
                 }
             ]
         },
@@ -552,7 +618,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/chergert/deviced.git"
+                    "url" : "https://gitlab.gnome.org/chergert/deviced.git",
+                    "tag" : "fdb99b547af635fafd7bae08935d3a14d5c95ee6"
                 }
             ]
         },
@@ -570,28 +637,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/Prince781/vala-language-server.git"
-                }
-            ]
-        },
-        {
-            "name" : "gvls",
-            "config-opts" : [
-                "--libdir=/app/lib",
-                "--buildtype=release",
-                "-Dui=false",
-                "-Dui-tests=false",
-                "-Ddocs=false",
-                "-Dintrospection=false",
-                "-Dgedit-plugin=false"
-            ],
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/esodan/gvls.git",
-                    "branch": "gvls-20.0"
+                    "url" : "https://github.com/Prince781/vala-language-server.git",
+                    "tag" : "0.48.4"
                 }
             ]
         },
@@ -599,7 +646,8 @@
             "name" : "libportal",
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=release"
+                "--buildtype=release",
+                "-Dbackends=gtk3"
             ],
             "buildsystem" : "meson",
             "builddir" : true,
@@ -607,14 +655,14 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/libportal.git",
-                    "commit" : "40b012ba328c99a0532f4da1f06b173f8ffc26e2"
+                    "tag" : "0.6"
                 }
             ]
         },
         {
-            "name": "html-tidy",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
+            "name" : "html-tidy",
+            "buildsystem" : "cmake-ninja",
+            "config-opts" : [
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DBUILD_SHARED_LIB=OFF"
             ],
@@ -631,8 +679,8 @@
             "buildsystem" : "cmake-ninja",
             "builddir" : true,
             "config-opts" : [
-              "-DCMARK_TESTS=OFF",
-              "-DCMARK_SHARED=OFF"
+                "-DCMARK_TESTS=OFF",
+                "-DCMARK_SHARED=OFF"
             ],
             "cleanup" : [
                 "/bin/cmark"
@@ -641,7 +689,20 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/commonmark/cmark",
-                    "tag" : "0.30.1"
+                    "tag" : "0.30.2"
+                }
+            ]
+        },
+        "typescript-language-server.json",
+        "intelephense-language-server.json",
+        {
+            "name" : "blueprint-compiler",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
+                    "tag" : "e3a37893a8709aa3d6a571ecb5a3f690da0ef82d"
                 }
             ]
         },
@@ -658,7 +719,7 @@
                 "-Dhelp=true",
                 "-Dchannel=flatpak-stable",
                 "-Dplugin_deviced=true",
-                "-Dgnome_sdk_version=41"
+                "-Dgnome_sdk_version=42"
             ],
             "cleanup" : [
                 "/share/gnome-builder/gir-1.0",
@@ -669,7 +730,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "commit" : "e043bcaaa8d151eef249e5d2db09ad3de54dea3a",
+                    "commit" : "5b8b483f817d077e9ec97a0a76d39fff018ba134",
                     "disable-shallow-clone" : true
                 }
             ],
@@ -678,7 +739,8 @@
                 "cp -a /usr/lib/sdk/llvm12/lib/* /app/lib/",
                 "cp -a /usr/lib/sdk/llvm12/libexec/* /app/libexec/",
                 "cp -a /usr/lib/sdk/llvm12/include/* /app/include/",
-                "cp -a /usr/lib/sdk/llvm12/share/* /app/share/"
+                "cp -a /usr/lib/sdk/llvm12/share/* /app/share/",
+                "install -d /app/extensions"
             ]
         }
     ]
