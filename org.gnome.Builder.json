@@ -436,9 +436,9 @@
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://github.com/ostreedev/ostree/releases/download/v2022.3/libostree-2022.3.tar.xz",
-                    "sha256" : "b823fd9dcd5503c5caf9febde24b0ed63ff46ca95188032ac567a2a95624f612"
+                    "type" : "git",
+                    "url" : "https://github.com/ostreedev/ostree.git",
+                    "tag" : "v2022.2"
                 }
             ]
         },
