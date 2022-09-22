@@ -83,8 +83,8 @@
         "*.a"
     ],
     "modules" : [
-        "gpython-deps.json",
-        "gpython3-jedi-language-server.json",
+        "python-deps.json",
+        "python3-jedi-language-server.json",
         {
             "name" : "gperftools",
             "cleanup" : [
@@ -602,8 +602,8 @@
                 }
             ]
         },
-        "gtypescript-language-server.json",
-        "gintelephense-language-server.json",
+        "typescript-language-server.json",
+        "intelephense-language-server.json",
         {
             "name" : "libpanel",
             "buildsystem" : "meson",
