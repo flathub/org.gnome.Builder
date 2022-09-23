@@ -36,7 +36,6 @@
         "--talk-name=org.gtk.vfs.*",
         "--system-talk-name=org.freedesktop.PolicyKit1",
         "--system-talk-name=org.gnome.Sysprof3",
-        "--talk-name=org.gnome.CodeAssist.v1.*",
         "--system-talk-name=org.freedesktop.Avahi",
         "--talk-name=org.freedesktop.FileManager1",
         "--talk-name=org.freedesktop.PackageKit",
@@ -48,6 +47,9 @@
         "--filesystem=/var/lib/flatpak",
         "--metadata=X-DConf=migrate-path=/org/gnome/builder/",
         "--env=G_SLICE=always-malloc"
+    ],
+    "x-run-args" : [
+        "--standalone"
     ],
     "build-options" : {
         "env" : {
@@ -232,7 +234,7 @@
             "config-opts" : [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DBUILD_SHARED_LIBS:BOOL=ON",
-                "-DUSE_SSH=ON",
+                "-DUSE_SSH:BOOL=ON",
                 "-DUSE_THREADS:BOOL=ON"
             ],
             "sources" : [
@@ -262,7 +264,7 @@
         {
             "name" : "libeditorconfig",
             "buildsystem" : "cmake",
-            "config-opts" : [ "-DINSTALL_HTML_DOC=OFF" ],
+            "config-opts" : [ "-DBUILD_DOCUMENTATION=OFF", "-DINSTALL_HTML_DOC=OFF" ],
             "sources" : [
                 {
                     "type" : "git",
@@ -397,7 +399,7 @@
             "name" : "libxmlb",
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized",
+                "--buildtype=release",
                 "-Dgtkdoc=false",
                 "-Dintrospection=false",
                 "-Dtests=false",
@@ -428,7 +430,7 @@
             "name" : "appstream",
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized",
+                "--buildtype=release",
                 "-Dgir=false",
                 "-Dapidocs=false",
                 "-Dinstall-docs=false"
@@ -603,8 +605,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/chergert/libpanel.git",
-                    "branch" : "main"
+                    "url" : "https://gitlab.gnome.org/GNOME/libpanel.git",
+                    "tag" : "1.0.0"
                 }
             ]
         },
@@ -626,7 +628,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/d-spy.git",
-                    "branch" : "main"
+                    "tag" : "1.4.0"
                 }
             ]
         },
@@ -639,9 +641,10 @@
                 "--buildtype=release",
                 "-Dctags_path=/app/bin/ctags",
                 "-Dtcmalloc=true",
-                "-Dtracing=false",
+                "-Dtracing=true",
                 "-Dhelp=true",
                 "-Dchannel=flatpak-stable",
+                "-Dnetwork_tests=false",
                 "-Dplugin_deviced=true",
                 "-Dgnome_sdk_version=43"
             ],
