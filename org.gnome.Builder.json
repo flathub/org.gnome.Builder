@@ -198,11 +198,11 @@
                 },
                 {
                     "type" : "patch",
-                    "path" : "gpolkit-build-Add-option-to-build-without-polkitd.patch"
+                    "path" : "polkit-build-Add-option-to-build-without-polkitd.patch"
                 },
                 {
                     "type" : "file",
-                    "path" : "gpolkit-autogen",
+                    "path" : "polkit-autogen",
                     "dest-filename" : "autogen.sh"
                 }
             ]
