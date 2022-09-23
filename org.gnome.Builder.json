@@ -641,9 +641,9 @@
             "builddir" : true,
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/flatpak/libportal.git",
-                    "tag" : "0.6"
+                    "type" : "archive",
+                    "url" : "https://github.com/flatpak/libportal/releases/download/0.6/libportal-0.6.tar.xz",
+                    "sha256" : "88a12c3ba71bc31acff7238c280de697d609cebc50830c3766776ec35abc6566"
                 }
             ]
         },
