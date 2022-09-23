@@ -138,19 +138,19 @@
                 },
                 {
                     "type" : "patch",
-                    "path" : "gfuse-2.9.2-namespace-conflict-fix.patch"
+                    "path" : "fuse-2.9.2-namespace-conflict-fix.patch"
                 },
                 {
                     "type" : "patch",
-                    "path" : "gfuse-disable-sys-mount-under-flatpak.patch"
+                    "path" : "fuse-disable-sys-mount-under-flatpak.patch"
                 },
                 {
                     "type" : "patch",
-                    "path" : "gfuse-2.9.2-closefrom.patch"
+                    "path" : "fuse-2.9.2-closefrom.patch"
                 },
                 {
                     "type" : "file",
-                    "path" : "gfusermount-wrapper.sh"
+                    "path" : "fusermount-wrapper.sh"
                 }
             ]
         },
