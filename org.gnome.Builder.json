@@ -655,7 +655,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "tag" : "64313e6b7ae8de8edf6461f3728f928177ce9edd",
+                    "tag" : "f96939b0ecdc08b16e0566ec3fc38d9231a427c4",
                     "disable-shallow-clone" : true
                 }
             ],
