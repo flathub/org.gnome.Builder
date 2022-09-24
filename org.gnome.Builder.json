@@ -1,11 +1,11 @@
 {
     "app-id" : "org.gnome.Builder",
     "runtime" : "org.gnome.Sdk",
-    "runtime-version" : "42",
+    "runtime-version" : "43",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
-        "org.freedesktop.Sdk.Extension.llvm12",
-        "org.freedesktop.Sdk.Extension.node14"
+        "org.freedesktop.Sdk.Extension.llvm14",
+        "org.freedesktop.Sdk.Extension.node18"
     ],
     "command" : "gnome-builder",
     "add-extensions" : {
@@ -36,7 +36,6 @@
         "--talk-name=org.gtk.vfs.*",
         "--system-talk-name=org.freedesktop.PolicyKit1",
         "--system-talk-name=org.gnome.Sysprof3",
-        "--talk-name=org.gnome.CodeAssist.v1.*",
         "--system-talk-name=org.freedesktop.Avahi",
         "--talk-name=org.freedesktop.FileManager1",
         "--talk-name=org.freedesktop.PackageKit",
@@ -49,14 +48,17 @@
         "--metadata=X-DConf=migrate-path=/org/gnome/builder/",
         "--env=G_SLICE=always-malloc"
     ],
+    "x-run-args" : [
+        "--standalone"
+    ],
     "build-options" : {
         "env" : {
             "V" : "1",
             "BASH_COMPLETIONSDIR" : "/app/share/bash-completion/completions",
             "MOUNT_FUSE_PATH" : "../tmp/"
         },
-        "prepend-path" : "/usr/lib/sdk/llvm12/bin",
-        "prepend-ld-library-path" : "/usr/lib/sdk/llvm12/lib"
+        "prepend-path" : "/usr/lib/sdk/llvm14/bin",
+        "prepend-ld-library-path" : "/usr/lib/sdk/llvm14/lib"
     },
     "cleanup" : [
         "/bin/rst*",
@@ -144,24 +146,16 @@
                     "path" : "fuse-disable-sys-mount-under-flatpak.patch"
                 },
                 {
+                    "type" : "patch",
+                    "path" : "fuse-2.9.2-closefrom.patch"
+                },
+                {
                     "type" : "file",
                     "path" : "fusermount-wrapper.sh"
                 }
             ]
         },
-        {
-            "name" : "intltool",
-            "cleanup" : [
-                "*"
-            ],
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
-                    "sha256" : "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
-                }
-            ]
-        },
+        "shared-modules/intltool/intltool-0.51.json",
         {
             "name" : "polkit",
             "config-opts" : [
@@ -240,14 +234,14 @@
             "config-opts" : [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DBUILD_SHARED_LIBS:BOOL=ON",
-                "-DUSE_SSH=ON",
+                "-DUSE_SSH:BOOL=ON",
                 "-DUSE_THREADS:BOOL=ON"
             ],
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://github.com/libgit2/libgit2.git",
-                    "tag" : "v1.4.2"
+                    "tag" : "v1.4.4"
                 }
             ]
         },
@@ -263,7 +257,19 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libgit2-glib.git",
-                    "tag" : "v1.0.0.1"
+                    "tag" : "v1.1.0"
+                }
+            ]
+        },
+        {
+            "name" : "libeditorconfig",
+            "buildsystem" : "cmake",
+            "config-opts" : [ "-DBUILD_DOCUMENTATION=OFF", "-DINSTALL_HTML_DOC=OFF" ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/editorconfig/editorconfig-core-c.git",
+                    "tag" : "v0.12.5"
                 }
             ]
         },
@@ -271,13 +277,14 @@
             "name" : "vte",
             "buildsystem" : "meson",
             "config-opts" : [
+                "-Dgtk4=true",
                 "-Dvapi=false"
             ],
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag" : "0.66.2"
+                    "tag" : "0.70.0"
                 }
             ]
         },
@@ -293,54 +300,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "tag" : "libpeas-1.32.0"
-                }
-            ]
-        },
-        {
-            "name" : "devhelp",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
-                "--libdir=/app/lib",
-                "--buildtype=release",
-                "-Dflatpak_build=true"
-            ],
-            "cleanup" : [
-                "/bin/*",
-                "/lib/gedit/plugins",
-                "/share/appdata/*",
-                "/share/applications/*",
-                "/share/dbus-1/services",
-                "/share/GConf",
-                "/share/metainfo"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/devhelp.git",
-                    "tag" : "41.2"
-                }
-            ]
-        },
-        {
-            "name" : "gspell",
-            "config-opts" : [
-                "--disable-gtk-doc",
-                "--disable-gtk-doc-html"
-            ],
-            "cleanup" : [
-                "/bin",
-                "/include",
-                "/lib/pkgconfig",
-                "*.la",
-                "/share"
-            ],
-            "sources" : [
-                {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.4.tar.xz",
-                    "sha256" : "cf4d16a716e813449bd631405dc1001ea89537b8cdae2b8abfb3999212bd43b4"
+                    "tag" : "libpeas-1.34.0"
                 }
             ]
         },
@@ -356,7 +316,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/template-glib.git",
-                    "tag" : "3.34.1"
+                    "tag" : "3.36.0"
                 }
             ]
         },
@@ -377,36 +337,17 @@
             ]
         },
         {
-            "name" : "libdazzle",
-            "config-opts" : [
-                "--libdir=/app/lib",
-                "--buildtype=release"
-            ],
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "cleanup" : [
-                "/bin"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libdazzle.git",
-                    "tag" : "3.44.0"
-                }
-            ]
-        },
-        {
             "name" : "sysprof",
             "config-opts" : [
                 "--libdir=/app/lib",
                 "--buildtype=release",
-                "-Denable_gtk=true",
-                "-Dwith_sysprofd=host"
+                "-Dgtk=true",
+                "-Dsysprofd=host",
+                "-Dagent=true"
             ],
             "buildsystem" : "meson",
             "builddir" : true,
             "cleanup" : [
-                "/bin/*",
                 "/libexec/sysprof",
                 "/share/appdata",
                 "/share/applications",
@@ -417,7 +358,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
-                    "tag" : "3.44.0"
+                    "tag" : "3.46.0"
                 }
             ]
         },
@@ -425,6 +366,8 @@
             "name" : "ostree",
             "config-opts" : [
                 "--disable-man",
+                "--with-curl",
+                "--without-soup",
                 "--without-libsystemd"
             ],
             "cleanup" : [
@@ -456,7 +399,7 @@
             "name" : "libxmlb",
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized",
+                "--buildtype=release",
                 "-Dgtkdoc=false",
                 "-Dintrospection=false",
                 "-Dtests=false",
@@ -487,7 +430,7 @@
             "name" : "appstream",
             "config-opts" : [
                 "--libdir=/app/lib",
-                "--buildtype=debugoptimized",
+                "--buildtype=release",
                 "-Dgir=false",
                 "-Dapidocs=false",
                 "-Dinstall-docs=false"
@@ -509,6 +452,7 @@
                 "--disable-seccomp",
                 "--disable-sandboxed-triggers",
                 "--disable-system-helper",
+                "--with-curl",
                 "--with-system-install-dir=/var/lib/flatpak",
                 "--sysconfdir=/var/run/host/etc"
             ],
@@ -584,28 +528,6 @@
             ]
         },
         {
-            "name" : "glade",
-            "cleanup" : [
-                "/share/applications",
-                "/share/help",
-                "/share/metainfo",
-                "/bin/glade"
-            ],
-            "config-opts" : [
-                "--libdir=/app/lib",
-                "--buildtype=release"
-            ],
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/glade.git",
-                    "commit" : "8d52d1ec3c706e8975eb48dfb59a0d145d55f803"
-                }
-            ]
-        },
-        {
             "name" : "deviced",
             "config-opts" : [
                 "--libdir=/app/lib",
@@ -624,38 +546,19 @@
             ]
         },
         {
-            "name" : "vala-language-server",
-            "config-opts" : [
-                "--libdir=/app/lib",
-                "--buildtype=release",
-                "-Dman-pages=disabled",
-                "-Dtests=false",
-                "-Dplugins=false"
-            ],
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://github.com/Prince781/vala-language-server.git",
-                    "tag" : "0.48.4"
-                }
-            ]
-        },
-        {
             "name" : "libportal",
             "config-opts" : [
                 "--libdir=/app/lib",
                 "--buildtype=release",
-                "-Dbackends=gtk3"
+                "-Dbackends=gtk4"
             ],
             "buildsystem" : "meson",
             "builddir" : true,
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/flatpak/libportal.git",
-                    "tag" : "0.6"
+                    "type" : "archive",
+                    "url" : "https://github.com/flatpak/libportal/releases/download/0.6/libportal-0.6.tar.xz",
+                    "sha256" : "88a12c3ba71bc31acff7238c280de697d609cebc50830c3766776ec35abc6566"
                 }
             ]
         },
@@ -696,6 +599,18 @@
         "typescript-language-server.json",
         "intelephense-language-server.json",
         {
+            "name" : "libpanel",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/libpanel.git",
+                    "tag" : "1.0.0"
+                }
+            ]
+        },
+        {
             "name" : "blueprint-compiler",
             "buildsystem" : "meson",
             "sources" : [
@@ -703,6 +618,17 @@
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
                     "tag" : "e3a37893a8709aa3d6a571ecb5a3f690da0ef82d"
+                }
+            ]
+        },
+        {
+            "name" : "d-spy",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/d-spy.git",
+                    "tag" : "1.4.0"
                 }
             ]
         },
@@ -715,31 +641,30 @@
                 "--buildtype=release",
                 "-Dctags_path=/app/bin/ctags",
                 "-Dtcmalloc=true",
-                "-Dtracing=false",
+                "-Dtracing=true",
                 "-Dhelp=true",
                 "-Dchannel=flatpak-stable",
+                "-Dnetwork_tests=false",
                 "-Dplugin_deviced=true",
-                "-Dgnome_sdk_version=42"
+                "-Dgnome_sdk_version=43"
             ],
             "cleanup" : [
-                "/share/gnome-builder/gir-1.0",
-                "/share/gnome-builder/vapi",
-                "/share/gtksourceview-3.0"
+                "/share/gnome-builder/gir-1.0"
             ],
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "tag" : "42.1",
+                    "tag" : "43.0",
                     "disable-shallow-clone" : true
                 }
             ],
             "post-install" : [
-                "cp -a /usr/lib/sdk/llvm12/bin/* /app/bin/",
-                "cp -a /usr/lib/sdk/llvm12/lib/* /app/lib/",
-                "cp -a /usr/lib/sdk/llvm12/libexec/* /app/libexec/",
-                "cp -a /usr/lib/sdk/llvm12/include/* /app/include/",
-                "cp -a /usr/lib/sdk/llvm12/share/* /app/share/",
+                "cp -a /usr/lib/sdk/llvm14/bin/* /app/bin/",
+                "cp -a /usr/lib/sdk/llvm14/lib/* /app/lib/",
+                "cp -a /usr/lib/sdk/llvm14/libexec/* /app/libexec/",
+                "cp -a /usr/lib/sdk/llvm14/include/* /app/include/",
+                "cp -a /usr/lib/sdk/llvm14/share/* /app/share/",
                 "install -d /app/extensions"
             ]
         }
