@@ -99,7 +99,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/gperftools/gperftools.git"
+                    "url" : "https://github.com/gperftools/gperftools.git",
+                    "tag" : "gperftools-2.10"
                 }
             ]
         },
