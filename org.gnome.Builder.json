@@ -670,7 +670,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "tag" : "43.3",
+                    "tag" : "43.4",
                     "disable-shallow-clone" : true
                 }
             ],
