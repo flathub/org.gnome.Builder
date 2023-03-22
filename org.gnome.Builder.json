@@ -631,21 +631,6 @@
             ]
         },
         {
-            "name" : "gtksourceview",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "--libdir=lib",
-                "--buildtype=release"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git",
-                    "tag" : "5.8.0"
-                }
-            ]
-        },
-        {
             "name" : "liburing",
             "buildsystem" : "autotools",
             "config-opts" : [
