@@ -257,7 +257,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libgit2-glib.git",
-                    "tag" : "v1.1.0"
+                    "commit" : "d97e73f499ee0b8e80cac3c4696ed234e4e993dd"
                 }
             ]
         },
