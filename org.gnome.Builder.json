@@ -644,6 +644,39 @@
             ]
         },
         {
+            "name" : "liburing",
+            "buildsystem" : "autotools",
+            "config-opts" : [
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/axboe/liburing.git",
+                    "tag" : "liburing-2.3"
+                }
+            ]
+        },
+        {
+            "name" : "libdex",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "--libdir=lib",
+                "--buildtype=debugoptimized",
+                "-Ddocs=false",
+                "-Dintrospection=enabled",
+                "-Dexamples=false",
+                "-Dtests=false",
+                "-Dsysprof=true"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/libdex.git",
+                    "tag" : "0.2.0"
+                }
+            ]
+        },
+        {
             "name" : "gnome-builder",
             "buildsystem" : "meson",
             "builddir" : true,
