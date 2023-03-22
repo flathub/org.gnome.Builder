@@ -4,8 +4,7 @@
     "runtime-version" : "43",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
-        "org.freedesktop.Sdk.Extension.llvm14",
-        "org.freedesktop.Sdk.Extension.node18"
+        "org.freedesktop.Sdk.Extension.llvm14"
     ],
     "command" : "gnome-builder",
     "add-extensions" : {
@@ -84,7 +83,6 @@
     ],
     "modules" : [
         "python-deps.json",
-        "python3-python-lsp-server.json",
         {
             "name" : "gperftools",
             "cleanup" : [
@@ -241,7 +239,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/libgit2/libgit2.git",
-                    "tag" : "v1.4.4"
+                    "tag" : "v1.5.0"
                 }
             ]
         },
@@ -596,8 +594,6 @@
                 }
             ]
         },
-        "typescript-language-server.json",
-        "intelephense-language-server.json",
         {
             "name" : "libpanel",
             "buildsystem" : "meson",
@@ -606,7 +602,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpanel.git",
-                    "tag" : "1.0.2"
+                    "tag" : "1.2.0"
                 }
             ]
         },
@@ -643,7 +639,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git",
-                    "tag" : "5.6.1"
+                    "tag" : "5.8.0"
                 }
             ]
         },
