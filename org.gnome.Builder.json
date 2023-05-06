@@ -677,7 +677,7 @@
                 "-Dchannel=flatpak-stable",
                 "-Dnetwork_tests=false",
                 "-Dplugin_deviced=true",
-                "-Dgnome_sdk_version=43"
+                "-Dgnome_sdk_version=44"
             ],
             "cleanup" : [
                 "/share/gnome-builder/gir-1.0"
