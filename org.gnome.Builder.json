@@ -1,7 +1,7 @@
 {
     "id" : "org.gnome.Builder",
     "runtime" : "org.gnome.Sdk",
-    "runtime-version" : "45",
+    "runtime-version" : "46",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.llvm16"
@@ -41,7 +41,6 @@
         "--filesystem=xdg-run/gvfsd",
         "--filesystem=xdg-run/keyring",
         "--filesystem=~/.local/share/flatpak",
-        "--filesystem=xdg-data/meson",
         "--filesystem=/var/lib/flatpak",
         "--metadata=X-DConf=migrate-path=/org/gnome/builder/",
         "--env=G_SLICE=always-malloc"
@@ -239,7 +238,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/libgit2/libgit2.git",
-                    "tag" : "v1.6.4"
+                    "tag" : "v1.7.2"
                 }
             ]
         },
@@ -255,7 +254,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libgit2-glib.git",
-                    "commit" : "d97e73f499ee0b8e80cac3c4696ed234e4e993dd"
+                    "tag" : "v1.2.0"
                 }
             ]
         },
@@ -284,7 +283,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag" : "0.70.4"
+                    "tag" : "0.76.0"
                 }
             ]
         },
@@ -300,7 +299,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gjs.git",
-                    "tag" : "1.78.0"
+                    "tag" : "1.80.0"
                 }
             ]
         },
@@ -315,7 +314,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "tag" : "2.0.0"
+                    "tag" : "2.0.1"
                 }
             ]
         },
@@ -331,7 +330,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/template-glib.git",
-                    "tag" : "3.36.1"
+                    "tag" : "3.36.2"
                 }
             ]
         },
@@ -379,7 +378,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libdex.git",
-                    "tag" : "0.4.0"
+                    "tag" : "0.6.0"
                 }
             ]
         },
@@ -395,7 +394,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpanel.git",
-                    "tag" : "1.4.0"
+                    "tag" : "1.6.0"
                 }
             ]
         },
@@ -422,7 +421,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
-                    "tag" : "45.0"
+                    "tag" : "46.0"
                 }
             ]
         },
@@ -445,7 +444,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/ostreedev/ostree.git",
-                    "tag" : "v2023.6"
+                    "tag" : "v2024.5"
                 }
             ]
         },
@@ -520,7 +519,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak.git",
-                    "tag" : "1.14.4"
+                    "tag" : "1.14.5"
                 }
             ]
         },
@@ -535,7 +534,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak-builder.git",
-                    "tag" : "1.3.3"
+                    "tag" : "1.3.5"
                 }
             ]
         },
@@ -653,7 +652,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "tag" : "v0.6.0"
+                    "tag" : "v0.12.0"
                 }
             ]
         },
@@ -664,7 +663,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/d-spy.git",
-                    "tag" : "1.6.0"
+                    "tag" : "1.10.0"
                 }
             ]
         },
@@ -691,7 +690,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "tag" : "45.0",
+                    "tag" : "46.0",
                     "disable-shallow-clone" : true
                 }
             ],
