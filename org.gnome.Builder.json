@@ -681,7 +681,7 @@
                 "-Dchannel=flatpak-stable",
                 "-Dnetwork_tests=false",
                 "-Dplugin_deviced=true",
-                "-Dgnome_sdk_version=45"
+                "-Dgnome_sdk_version=46"
             ],
             "cleanup" : [
                 "/share/gnome-builder/gir-1.0"
@@ -690,7 +690,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "tag" : "46.0",
+                    "tag" : "46.1",
                     "disable-shallow-clone" : true
                 }
             ],
