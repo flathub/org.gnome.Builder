@@ -1,10 +1,10 @@
 {
     "id" : "org.gnome.Builder",
     "runtime" : "org.gnome.Sdk",
-    "runtime-version" : "46",
+    "runtime-version" : "47",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
-        "org.freedesktop.Sdk.Extension.llvm16"
+        "org.freedesktop.Sdk.Extension.llvm18"
     ],
     "command" : "gnome-builder",
     "add-extensions" : {
@@ -54,8 +54,8 @@
             "BASH_COMPLETIONSDIR" : "/app/share/bash-completion/completions",
             "MOUNT_FUSE_PATH" : "../tmp/"
         },
-        "prepend-path" : "/usr/lib/sdk/llvm16/bin",
-        "prepend-ld-library-path" : "/usr/lib/sdk/llvm16/lib"
+        "prepend-path" : "/usr/lib/sdk/llvm18/bin",
+        "prepend-ld-library-path" : "/usr/lib/sdk/llvm18/lib"
     },
     "cleanup" : [
         "/bin/rst*",
@@ -97,7 +97,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/gperftools/gperftools.git",
-                    "tag" : "gperftools-2.10"
+                    "tag" : "gperftools-2.14"
                 }
             ]
         },
@@ -243,7 +243,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag" : "0.76.0"
+                    "tag" : "0.78.0"
                 }
             ]
         },
@@ -259,7 +259,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gjs.git",
-                    "tag" : "1.80.0"
+                    "tag" : "1.82.0"
                 }
             ]
         },
@@ -274,7 +274,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "tag" : "2.0.1"
+                    "tag" : "2.0.5"
                 }
             ]
         },
@@ -306,7 +306,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/jsonrpc-glib.git",
-                    "tag" : "3.44.0"
+                    "tag" : "3.44.1"
                 }
             ]
         },
@@ -319,7 +319,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/axboe/liburing.git",
-                    "tag" : "liburing-2.3"
+                    "tag" : "liburing-2.7"
                 }
             ]
         },
@@ -338,7 +338,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libdex.git",
-                    "tag" : "0.6.0"
+                    "tag" : "0.8.0"
                 }
             ]
         },
@@ -354,7 +354,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libpanel.git",
-                    "tag" : "1.6.0"
+                    "tag" : "1.8.0"
                 }
             ]
         },
@@ -381,7 +381,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
-                    "tag" : "46.0"
+                    "tag" : "47.0"
                 }
             ]
         },
@@ -404,7 +404,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/ostreedev/ostree.git",
-                    "tag" : "v2024.5"
+                    "tag" : "v2024.8"
                 }
             ]
         },
@@ -479,7 +479,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak.git",
-                    "tag" : "1.14.5"
+                    "tag" : "1.14.10"
                 }
             ]
         },
@@ -494,7 +494,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak-builder.git",
-                    "tag" : "1.4.3"
+                    "tag" : "1.4.4"
                 }
             ]
         },
@@ -567,7 +567,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/libportal",
-                    "tag" : "0.7.1"
+                    "tag" : "0.8.1"
                 }
             ]
         },
@@ -612,7 +612,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "tag" : "v0.12.0"
+                    "tag" : "v0.14.0"
                 }
             ]
         },
@@ -623,7 +623,41 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/d-spy.git",
-                    "tag" : "1.10.0"
+                    "tag" : "47.0"
+                }
+            ]
+        },
+        {
+            "name" : "gom",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/gom/0.5/gom-0.5.3.tar.xz",
+                    "sha256" : "069d0909fbdc6b4d27edf7a879366194e3ab508b03548bf5b89ff63546d20177",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "gom"
+                    }
+                }
+            ]
+        },
+        {
+            "name" : "libspelling",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dintrospection=disabled",
+                "-Ddocs=false"
+            ],
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.0.tar.xz",
+                    "sha256" : "00c63970d708a0ef3bcba40e708a06d7030114cb9f210c74583ffad56d36e3dd",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "libspelling"
+                    }
                 }
             ]
         },
@@ -641,7 +675,7 @@
                 "-Dchannel=flatpak-stable",
                 "-Dnetwork_tests=false",
                 "-Dplugin_deviced=true",
-                "-Dgnome_sdk_version=46"
+                "-Dgnome_sdk_version=47"
             ],
             "cleanup" : [
                 "/share/gnome-builder/gir-1.0"
@@ -650,16 +684,16 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "tag" : "46.1",
+                    "tag" : "47.0",
                     "disable-shallow-clone" : true
                 }
             ],
             "post-install" : [
-                "cp -a /usr/lib/sdk/llvm16/bin/* /app/bin/",
-                "cp -a /usr/lib/sdk/llvm16/lib/* /app/lib/",
-                "cp -a /usr/lib/sdk/llvm16/libexec/* /app/libexec/",
-                "cp -a /usr/lib/sdk/llvm16/include/* /app/include/",
-                "cp -a /usr/lib/sdk/llvm16/share/* /app/share/",
+                "cp -a /usr/lib/sdk/llvm18/bin/* /app/bin/",
+                "cp -a /usr/lib/sdk/llvm18/lib/* /app/lib/",
+                "cp -a /usr/lib/sdk/llvm18/libexec/* /app/libexec/",
+                "cp -a /usr/lib/sdk/llvm18/include/* /app/include/",
+                "cp -a /usr/lib/sdk/llvm18/share/* /app/share/",
                 "install -d /app/extensions"
             ]
         }
