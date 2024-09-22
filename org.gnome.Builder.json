@@ -212,9 +212,13 @@
             "builddir" : true,
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libgit2-glib.git",
-                    "tag" : "v1.2.0"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/libgit2-glib/1.2/libgit2-glib-1.2.0.tar.xz",
+                    "sha256" : "1331dada838f4e1f591b26459d44126a325de762dc3cd26153a31afbdfe18190",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "libgit2-glib"
+                    }
                 }
             ]
         },
@@ -241,9 +245,13 @@
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/vte.git",
-                    "tag" : "0.78.0"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/vte/0.78/vte-0.78.0.tar.xz",
+                    "sha256" : "07f09c6228a8bb3c1599dd0f5a6ec797b30d3010c3ac91cf21b69d9635dfaf7c",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "vte"
+                    }
                 }
             ]
         },
@@ -257,9 +265,13 @@
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gjs.git",
-                    "tag" : "1.82.0"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/gjs/1.82/gjs-1.82.0.tar.xz",
+                    "sha256" : "14490236868d0bf822f7aa7cf38fcd333e7620760fdcf50e932423611f626623",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "gjs"
+                    }
                 }
             ]
         },
@@ -272,9 +284,13 @@
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libpeas.git",
-                    "tag" : "2.0.5"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/libpeas/2.0/libpeas-2.0.5.tar.xz",
+                    "sha256" : "376f2f73d731b54e13ddbab1d91b6382cf6a980524def44df62add15489de6dd",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "libpeas"
+                    }
                 }
             ]
         },
@@ -288,9 +304,13 @@
             "builddir" : true,
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/template-glib.git",
-                    "tag" : "3.36.2"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/template-glib/3.36/template-glib-3.36.2.tar.xz",
+                    "sha256" : "0020f3a401888ce763b3a17508c2f58e91972a483a0c547afdb7ccbe25619948",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "template-glib"
+                    }
                 }
             ]
         },
@@ -304,9 +324,13 @@
             "builddir" : true,
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/jsonrpc-glib.git",
-                    "tag" : "3.44.1"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/jsonrpc-glib/3.44/jsonrpc-glib-3.44.1.tar.xz",
+                    "sha256" : "1361d17e9c805646afe5102e59baf8ca450238600fcabd01586c654b78bb30df",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "jsonrpc-glib"
+                    }
                 }
             ]
         },
@@ -336,9 +360,13 @@
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libdex.git",
-                    "tag" : "0.8.0"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/libdex/0.8/libdex-0.8.0.tar.xz",
+                    "sha256" : "659ab5d0eb7f10bd36af0cde08055158987690b9714e7f5b001c788ec1d01a25",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "libdex"
+                    }
                 }
             ]
         },
@@ -352,9 +380,13 @@
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libpanel.git",
-                    "tag" : "1.8.0"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/libpanel/1.8/libpanel-1.8.0.tar.xz",
+                    "sha256" : "5a9b6b54452fa1903a2fd64ba62278ef94b9b11659b7e1a5fda3518b66cd39c3",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "libpanel"
+                    }
                 }
             ]
         },
@@ -379,9 +411,13 @@
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/sysprof.git",
-                    "tag" : "47.0"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/sysprof/47/sysprof-47.0.tar.xz",
+                    "sha256" : "7424c629434660654288c04248998c357d1ce87ee1559fd44df1980992ef5df5",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "sysprof"
+                    }
                 }
             ]
         },
@@ -404,7 +440,13 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/ostreedev/ostree.git",
-                    "tag" : "v2024.8"
+                    "tag" : "v2024.8",
+                    "commit" : "05d36e056dc04ddde9978e82609ec2afd2292e89",
+                    "x-checker-data" : {
+                        "type" : "git",
+                        "url" : "https://github.com/flatpak/libportal",
+                        "tag-pattern" : "^(v[\\d.]+)$"
+                    }
                 }
             ]
         },
@@ -479,7 +521,13 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak.git",
-                    "tag" : "1.14.10"
+                    "tag" : "1.14.10",
+                    "commit" : "5a2503f1e8ef94364e3060ec440546cc47af7fa5",
+                    "x-checker-data" : {
+                        "type" : "git",
+                        "url" : "https://github.com/flatpak/flatpak",
+                        "tag-pattern" : "^([\\d]+\\.\\d*[02468][\\d.]*)$"
+                    }
                 }
             ]
         },
@@ -494,7 +542,14 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/flatpak-builder.git",
-                    "tag" : "1.4.4"
+                    "tag" : "1.4.4",
+                    "commit" : "f996a7949076ef1dc85c602da85b981b0a173a23",
+                    "x-checker-data" : {
+                        "type" : "git",
+                        "is-important" : true,
+                        "url" : "https://github.com/flatpak/flatpak-builder.git",
+                        "tag-pattern" : "^([\\d]+\\.\\d*[02468][\\d.]*)$"
+                    }
                 }
             ]
         },
@@ -567,7 +622,13 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/flatpak/libportal",
-                    "tag" : "0.8.1"
+                    "tag" : "0.8.1",
+                    "commit" : "26c15008cbe579f57f89468384f8efc033f25f6f",
+                    "x-checker-data" : {
+                        "type" : "git",
+                        "url" : "https://github.com/flatpak/libportal",
+                        "tag-pattern" : "^([\\d.]+)$"
+                    }
                 }
             ]
         },
@@ -621,9 +682,13 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/d-spy.git",
-                    "tag" : "47.0"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/d-spy/47/d-spy-47.0.tar.xz",
+                    "sha256" : "effb30d432ad5e43e6c449bdf8e317da297e56e027416e73e2e96c4cf18f69e8",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "d-spy"
+                    }
                 }
             ]
         },
@@ -682,10 +747,14 @@
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gnome-builder.git",
-                    "tag" : "47.0",
-                    "disable-shallow-clone" : true
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/gnome-builder/47/gnome-builder-47.0.tar.xz",
+                    "sha256" : "f700d69ddd0857db4f117ba7c38b1da63d596bab3ade8a14d69978c892f066f3",
+                    "x-checker-data" : {
+                        "type" : "gnome",
+                        "name" : "gnome-builder",
+                        "is-important" : true
+                    }
                 }
             ],
             "post-install" : [
