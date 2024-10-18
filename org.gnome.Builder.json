@@ -363,8 +363,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libdex/0.8/libdex-0.8.0.tar.xz",
-                    "sha256": "659ab5d0eb7f10bd36af0cde08055158987690b9714e7f5b001c788ec1d01a25",
+                    "url": "https://download.gnome.org/sources/libdex/0.8/libdex-0.8.1.tar.xz",
+                    "sha256": "955475ad3e43aabd6f6f70435264b5ee77bd265bd95545211fee026b08d378a0",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libdex"
@@ -383,8 +383,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libpanel/1.8/libpanel-1.8.0.tar.xz",
-                    "sha256": "5a9b6b54452fa1903a2fd64ba62278ef94b9b11659b7e1a5fda3518b66cd39c3",
+                    "url": "https://download.gnome.org/sources/libpanel/1.8/libpanel-1.8.1.tar.xz",
+                    "sha256": "b87b8fa9b79768cc704243793f0158a040a1e46d37b9889188545a7f7dcaa6fb",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libpanel"
@@ -719,8 +719,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.2.tar.xz",
-                    "sha256": "b3e609b1a247e71bc097e262564f33f51fd7db566eeb0cd74ae5021536b878b5",
+                    "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.4.tar.xz",
+                    "sha256": "ac9132c634bb9df911e35b52345aa12126f7ec95e5f07179a980861819787150",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libspelling"
@@ -750,8 +750,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-builder/47/gnome-builder-47.1.tar.xz",
-                    "sha256": "e6f76ebcf6c55cc982d4460059d3d156d9b41127fb7ab660ecba9dc9606893c5",
+                    "url": "https://download.gnome.org/sources/gnome-builder/47/gnome-builder-47.2.tar.xz",
+                    "sha256": "4687b93c47cd1e33665a2dc503790b6213ee827872fc004d978d14bcbfa9b495",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gnome-builder",
