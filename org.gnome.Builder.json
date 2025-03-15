@@ -253,6 +253,7 @@
                     "sha256": "07f09c6228a8bb3c1599dd0f5a6ec797b30d3010c3ac91cf21b69d9635dfaf7c",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "vte"
                     }
                 }
@@ -273,6 +274,7 @@
                     "sha256": "14490236868d0bf822f7aa7cf38fcd333e7620760fdcf50e932423611f626623",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "gjs"
                     }
                 }
