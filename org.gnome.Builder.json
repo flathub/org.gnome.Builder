@@ -386,37 +386,6 @@
             ]
         },
         {
-            "name": "sysprof",
-            "config-opts": [
-                "--buildtype=release",
-                "-Dexamples=false",
-                "-Dgtk=false",
-                "-Dsysprofd=host",
-                "-Dtests=false",
-                "-Dtools=true"
-            ],
-            "buildsystem": "meson",
-            "builddir": true,
-            "cleanup": [
-                "/libexec/sysprof",
-                "/share/appdata",
-                "/share/applications",
-                "/share/metainfo",
-                "/share/mime/packages"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/sysprof/48/sysprof-48.0.tar.xz",
-                    "sha256": "1b0f0380f2f30708ba87829321a06fee1db36dfa87797bbf07f0a7acf4498d18",
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "name": "sysprof"
-                    }
-                }
-            ]
-        },
-        {
             "name": "ostree",
             "config-opts": [
                 "--disable-man",
