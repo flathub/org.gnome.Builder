@@ -551,6 +551,7 @@
             "config-opts": [
                 "-Ddocs=disabled",
                 "-Dtests=false",
+                "-Dinstalled_tests=false",
                 "-Dfuse=2"
             ],
             "sources": [
