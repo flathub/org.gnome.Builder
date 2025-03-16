@@ -508,6 +508,7 @@
                 "-Dman=disabled",
                 "-Dseccomp=disabled",
                 "-Dselinux_module=disabled",
+                "-Dmalcontent=disabled",
                 "-Dsandboxed_triggers=false",
                 "-Dsystem_helper=disabled",
                 "-Dhttp_backend=curl",
