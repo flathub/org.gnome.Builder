@@ -689,7 +689,13 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "tag": "v0.16.0"
+                    "tag": "v0.16.0",
+                    "commit": "04ef0944db56ab01307a29aaa7303df6067cb3c0",
+                    "x-checker-data": {
+                        "type": "git",
+                        "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+                        "tag-pattern": "^(v[\\d]+\\.\\d*[02468][\\d.]*)$"
+                    }
                 }
             ]
         },
