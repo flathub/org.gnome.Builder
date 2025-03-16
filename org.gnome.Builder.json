@@ -456,6 +456,49 @@
             ]
         },
         {
+            "name": "bubblewrap",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dman=disabled",
+                "-Dselinux=disabled",
+                "-Dtests=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/projectatomic/bubblewrap/archive/refs/tags/v0.11.0.tar.gz",
+                    "sha256": "cfeeb15fcc47d177d195f06fdf0847e93ee3aa6bf46f6ac0a141fa142759e2c3",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 10937,
+                        "stable-only": true,
+                        "url-template": "https://github.com/projectatomic/bubblewrap/archive/refs/tags/v$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "xdg-dbus-proxy",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dman=disabled",
+                "-Dtests=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/flatpak/xdg-dbus-proxy/archive/refs/tags/0.1.6.tar.gz",
+                    "sha256": "ee9c1d665f4e3b025a83d522d478ff7930070f2817fc2cb446db0dca93c990b1",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 58434,
+                        "stable-only": true,
+                        "url-template": "https://github.com/flatpak/xdg-dbus-proxy/archive/refs/tags/$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
             "name": "flatpak",
             "buildsystem": "meson",
             "config-opts": [
@@ -469,6 +512,8 @@
                 "-Dhttp_backend=curl",
                 "-Dsystemd=disabled",
                 "-Dsystem_install_dir=/var/lib/flatpak",
+                "-Dsystem_bubblewrap=bwrap",
+                "-Dsystem_dbus_proxy=xdg-dbus-proxy",
                 "--sysconfdir=/var/run/host/etc"
             ],
             "cleanup": [
