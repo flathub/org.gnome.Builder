@@ -1,7 +1,7 @@
 {
     "id": "org.gnome.Builder",
     "runtime": "org.gnome.Sdk",
-    "runtime-version": "47",
+    "runtime-version": "48",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.llvm18"
@@ -213,8 +213,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libgit2-glib/1.2/libgit2-glib-1.2.0.tar.xz",
-                    "sha256": "1331dada838f4e1f591b26459d44126a325de762dc3cd26153a31afbdfe18190",
+                    "url": "https://download.gnome.org/sources/libgit2-glib/1.2/libgit2-glib-1.2.1.tar.xz",
+                    "sha256": "97423a779002b3be8751c75f9d79049dfccca3616a26159fc162486772ba785f",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libgit2-glib"
@@ -238,6 +238,18 @@
             ]
         },
         {
+            "name": "fast_float",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/fastfloat/fast_float.git",
+                    "tag": "v8.0.2",
+                    "commit": "50a80a73ab2ab256ba1c3bf86923ddd8b4202bc7"
+                }
+            ]
+        },
+        {
             "name": "vte",
             "buildsystem": "meson",
             "config-opts": [
@@ -249,31 +261,12 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vte/0.78/vte-0.78.0.tar.xz",
-                    "sha256": "07f09c6228a8bb3c1599dd0f5a6ec797b30d3010c3ac91cf21b69d9635dfaf7c",
+                    "url": "https://download.gnome.org/sources/vte/0.80/vte-0.80.0.tar.xz",
+                    "sha256": "267f63739765e568cf8113d0e2ee8f593028946187854bebe268c778e62647c8",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "vte"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "gjs",
-            "buildsystem": "meson",
-            "config-opts": [
-                "-Dinstalled_tests=false",
-                "-Dskip_dbus_tests=true",
-                "-Dskip_gtk_tests=true"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/gjs/1.82/gjs-1.82.0.tar.xz",
-                    "sha256": "14490236868d0bf822f7aa7cf38fcd333e7620760fdcf50e932423611f626623",
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "name": "gjs"
                     }
                 }
             ]
@@ -288,8 +281,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libpeas/2.0/libpeas-2.0.5.tar.xz",
-                    "sha256": "376f2f73d731b54e13ddbab1d91b6382cf6a980524def44df62add15489de6dd",
+                    "url": "https://download.gnome.org/sources/libpeas/2.0/libpeas-2.0.7.tar.xz",
+                    "sha256": "1e9a9d69761d2109eff5b7c11d8c96b4867ccfaca2b921eded49401192769ec9",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libpeas"
@@ -308,8 +301,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/template-glib/3.36/template-glib-3.36.2.tar.xz",
-                    "sha256": "0020f3a401888ce763b3a17508c2f58e91972a483a0c547afdb7ccbe25619948",
+                    "url": "https://download.gnome.org/sources/template-glib/3.36/template-glib-3.36.3.tar.xz",
+                    "sha256": "d528b35b2cf90e07dae50e25e12fbadb0eb048f57fd5151cf9f6e98cce1df20e",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "template-glib"
@@ -363,8 +356,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libdex/0.8/libdex-0.8.1.tar.xz",
-                    "sha256": "955475ad3e43aabd6f6f70435264b5ee77bd265bd95545211fee026b08d378a0",
+                    "url": "https://download.gnome.org/sources/libdex/0.10/libdex-0.10.0.tar.xz",
+                    "sha256": "98a69626aa7646ad455bea7a7f92d2a1ffa47e4559a154a1bfe98c16fa711ee1",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libdex"
@@ -383,42 +376,11 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libpanel/1.8/libpanel-1.8.1.tar.xz",
-                    "sha256": "b87b8fa9b79768cc704243793f0158a040a1e46d37b9889188545a7f7dcaa6fb",
+                    "url": "https://download.gnome.org/sources/libpanel/1.10/libpanel-1.10.0.tar.xz",
+                    "sha256": "578ce512278ff2bb5eeebb55099392c52537a5abd9bd0629567f102532b38b25",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libpanel"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "sysprof",
-            "config-opts": [
-                "--buildtype=release",
-                "-Dexamples=false",
-                "-Dgtk=false",
-                "-Dsysprofd=host",
-                "-Dtests=false",
-                "-Dtools=true"
-            ],
-            "buildsystem": "meson",
-            "builddir": true,
-            "cleanup": [
-                "/libexec/sysprof",
-                "/share/appdata",
-                "/share/applications",
-                "/share/metainfo",
-                "/share/mime/packages"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/sysprof/47/sysprof-47.0.tar.xz",
-                    "sha256": "7424c629434660654288c04248998c357d1ce87ee1559fd44df1980992ef5df5",
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "name": "sysprof"
                     }
                 }
             ]
@@ -442,8 +404,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ostreedev/ostree.git",
-                    "tag": "v2024.8",
-                    "commit": "05d36e056dc04ddde9978e82609ec2afd2292e89",
+                    "tag": "v2025.1",
+                    "commit": "372c4444ddc4090608afedfe07e9a028d7b8758f",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://github.com/flatpak/libportal",
@@ -494,14 +456,66 @@
             ]
         },
         {
-            "name": "flatpak",
+            "name": "bubblewrap",
+            "buildsystem": "meson",
             "config-opts": [
-                "--disable-documentation",
-                "--disable-seccomp",
-                "--disable-sandboxed-triggers",
-                "--disable-system-helper",
-                "--with-curl",
-                "--with-system-install-dir=/var/lib/flatpak",
+                "-Dman=disabled",
+                "-Dselinux=disabled",
+                "-Dtests=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/projectatomic/bubblewrap/archive/refs/tags/v0.11.0.tar.gz",
+                    "sha256": "cfeeb15fcc47d177d195f06fdf0847e93ee3aa6bf46f6ac0a141fa142759e2c3",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 10937,
+                        "stable-only": true,
+                        "url-template": "https://github.com/projectatomic/bubblewrap/archive/refs/tags/v$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "xdg-dbus-proxy",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dman=disabled",
+                "-Dtests=false"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/flatpak/xdg-dbus-proxy/archive/refs/tags/0.1.6.tar.gz",
+                    "sha256": "ee9c1d665f4e3b025a83d522d478ff7930070f2817fc2cb446db0dca93c990b1",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 58434,
+                        "stable-only": true,
+                        "url-template": "https://github.com/flatpak/xdg-dbus-proxy/archive/refs/tags/$version.tar.gz"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "flatpak",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dgtkdoc=disabled",
+                "-Ddocbook_docs=disabled",
+                "-Dtests=false",
+                "-Dman=disabled",
+                "-Dseccomp=disabled",
+                "-Dselinux_module=disabled",
+                "-Dmalcontent=disabled",
+                "-Dsandboxed_triggers=false",
+                "-Dsystem_helper=disabled",
+                "-Dhttp_backend=curl",
+                "-Dsystemd=disabled",
+                "-Dsystem_install_dir=/var/lib/flatpak",
+                "-Dsystem_bubblewrap=bwrap",
+                "-Dsystem_dbus_proxy=xdg-dbus-proxy",
                 "--sysconfdir=/var/run/host/etc"
             ],
             "cleanup": [
@@ -523,8 +537,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/flatpak.git",
-                    "tag": "1.14.10",
-                    "commit": "5a2503f1e8ef94364e3060ec440546cc47af7fa5",
+                    "tag": "1.16.0",
+                    "commit": "1440f4faa67ebf69c7559f31d2cab59e6ec6fe2b",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://github.com/flatpak/flatpak",
@@ -538,7 +552,9 @@
             "buildsystem": "meson",
             "config-opts": [
                 "-Ddocs=disabled",
-                "-Dtests=false"
+                "-Dtests=false",
+                "-Dinstalled_tests=false",
+                "-Dfuse=2"
             ],
             "sources": [
                 {
@@ -624,8 +640,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/libportal",
-                    "tag": "0.8.1",
-                    "commit": "26c15008cbe579f57f89468384f8efc033f25f6f",
+                    "tag": "0.9.1",
+                    "commit": "8f5dc8d192f6e31dafe69e35219e3b707bde71ce",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://github.com/flatpak/libportal",
@@ -675,7 +691,13 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "tag": "v0.14.0"
+                    "tag": "v0.16.0",
+                    "commit": "04ef0944db56ab01307a29aaa7303df6067cb3c0",
+                    "x-checker-data": {
+                        "type": "git",
+                        "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
+                        "tag-pattern": "^(v[\\d]+\\.\\d*[02468][\\d.]*)$"
+                    }
                 }
             ]
         },
@@ -685,8 +707,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/d-spy/47/d-spy-47.0.tar.xz",
-                    "sha256": "effb30d432ad5e43e6c449bdf8e317da297e56e027416e73e2e96c4cf18f69e8",
+                    "url": "https://download.gnome.org/sources/d-spy/48/d-spy-48.0.tar.xz",
+                    "sha256": "0f7a09019046194d97fc3c342b384ea1c380e10a9cfc8025bfcde57d595c3830",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "d-spy"
@@ -719,8 +741,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.4.tar.xz",
-                    "sha256": "ac9132c634bb9df911e35b52345aa12126f7ec95e5f07179a980861819787150",
+                    "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.7.tar.xz",
+                    "sha256": "42f130f295f5addb6e9e8e74ccfbb709794bd2dfd021293e2875b9481bbd4e88",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libspelling"
@@ -750,8 +772,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-builder/47/gnome-builder-47.2.tar.xz",
-                    "sha256": "4687b93c47cd1e33665a2dc503790b6213ee827872fc004d978d14bcbfa9b495",
+                    "url": "https://download.gnome.org/sources/gnome-builder/48/gnome-builder-48.0.tar.xz",
+                    "sha256": "7afe9a7a3b3c6621768bc46a61d698dd788b3653fb46a708238bdccf4de67ba4",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gnome-builder",
