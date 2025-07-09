@@ -262,8 +262,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vte/0.80/vte-0.80.0.tar.xz",
-                    "sha256": "267f63739765e568cf8113d0e2ee8f593028946187854bebe268c778e62647c8",
+                    "url": "https://download.gnome.org/sources/vte/0.80/vte-0.80.3.tar.xz",
+                    "sha256": "2e596fd3fbeabb71531662224e71f6a2c37f684426136d62854627276ef4f699",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
@@ -286,6 +286,7 @@
                     "sha256": "1e9a9d69761d2109eff5b7c11d8c96b4867ccfaca2b921eded49401192769ec9",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "libpeas"
                     }
                 }
@@ -306,6 +307,7 @@
                     "sha256": "d528b35b2cf90e07dae50e25e12fbadb0eb048f57fd5151cf9f6e98cce1df20e",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "template-glib"
                     }
                 }
@@ -326,6 +328,7 @@
                     "sha256": "965496b6e1314f3468b482a5d80340dc3b0340a5402d7783cad24154aee77396",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "jsonrpc-glib"
                     }
                 }
@@ -357,8 +360,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libdex/0.10/libdex-0.10.0.tar.xz",
-                    "sha256": "98a69626aa7646ad455bea7a7f92d2a1ffa47e4559a154a1bfe98c16fa711ee1",
+                    "url": "https://download.gnome.org/sources/libdex/0.10/libdex-0.10.1.tar.xz",
+                    "sha256": "7472e88090db2b228307505edeba4483e872681340cb0404ae64ac3da5bed0a6",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
@@ -792,6 +795,7 @@
                     "sha256": "277646285818da7b295ef007b2c5ebd815d0930b3ad097505b3ced96965af517",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "libspelling"
                     }
                 }
