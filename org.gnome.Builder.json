@@ -262,8 +262,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vte/0.80/vte-0.80.0.tar.xz",
-                    "sha256": "267f63739765e568cf8113d0e2ee8f593028946187854bebe268c778e62647c8",
+                    "url": "https://download.gnome.org/sources/vte/0.81/vte-0.81.0.tar.xz",
+                    "sha256": "d54afc8bbe4a9f53984e17a73f7d3e436b886d71433c247bfd7b9ca658c2ae40",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
@@ -302,8 +302,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/template-glib/3.36/template-glib-3.36.3.tar.xz",
-                    "sha256": "d528b35b2cf90e07dae50e25e12fbadb0eb048f57fd5151cf9f6e98cce1df20e",
+                    "url": "https://download.gnome.org/sources/template-glib/3.37/template-glib-3.37.0.tar.xz",
+                    "sha256": "21647d5e0502bd67d5ff5fb71b9f070c377e9e7bf7facf12e08c0b26d1170ce5",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "template-glib"
@@ -322,8 +322,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/jsonrpc-glib/3.44/jsonrpc-glib-3.44.1.tar.xz",
-                    "sha256": "1361d17e9c805646afe5102e59baf8ca450238600fcabd01586c654b78bb30df",
+                    "url": "https://download.gnome.org/sources/jsonrpc-glib/3.44/jsonrpc-glib-3.44.2.tar.xz",
+                    "sha256": "965496b6e1314f3468b482a5d80340dc3b0340a5402d7783cad24154aee77396",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "jsonrpc-glib"
@@ -405,8 +405,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ostreedev/ostree.git",
-                    "tag": "v2025.1",
-                    "commit": "372c4444ddc4090608afedfe07e9a028d7b8758f",
+                    "tag": "v2025.2",
+                    "commit": "1dd64eb264be462475a1163c6fee686c1f191994",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://github.com/flatpak/libportal",
@@ -457,8 +457,8 @@
             ]
         },
         {
-            "name" : "polkit",
-            "config-opts" : [
+            "name": "polkit",
+            "config-opts": [
                 "--disable-polkitd",
                 "--disable-man-pages",
                 "--disable-introspection",
@@ -470,13 +470,13 @@
                 "--with-authdb=dummy",
                 "--with-authfw=none"
             ],
-            "rm-configure" : true,
-            "build-options" : {
-                "env" : {
-                    "CFLAGS" : "-Wno-implicit-function-declaration"
+            "rm-configure": true,
+            "build-options": {
+                "env": {
+                    "CFLAGS": "-Wno-implicit-function-declaration"
                 }
             },
-            "cleanup" : [
+            "cleanup": [
                 "/bin/*",
                 "/etc/pam.d",
                 "/etc/dbus-1",
@@ -484,20 +484,20 @@
                 "/share/polkit-1",
                 "/lib/polkit-1"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "archive",
-                    "url" : "https://www.freedesktop.org/software/polkit/releases/polkit-0.116.tar.gz",
-                    "sha256" : "88170c9e711e8db305a12fdb8234fac5706c61969b94e084d0f117d8ec5d34b1"
+                    "type": "archive",
+                    "url": "https://www.freedesktop.org/software/polkit/releases/polkit-0.116.tar.gz",
+                    "sha256": "88170c9e711e8db305a12fdb8234fac5706c61969b94e084d0f117d8ec5d34b1"
                 },
                 {
-                    "type" : "patch",
-                    "path" : "polkit-build-Add-option-to-build-without-polkitd.patch"
+                    "type": "patch",
+                    "path": "polkit-build-Add-option-to-build-without-polkitd.patch"
                 },
                 {
-                    "type" : "file",
-                    "path" : "polkit-autogen",
-                    "dest-filename" : "autogen.sh"
+                    "type": "file",
+                    "path": "polkit-autogen",
+                    "dest-filename": "autogen.sh"
                 }
             ]
         },
@@ -583,8 +583,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/flatpak.git",
-                    "tag": "1.16.0",
-                    "commit": "1440f4faa67ebf69c7559f31d2cab59e6ec6fe2b",
+                    "tag": "1.16.1",
+                    "commit": "b676905d91aa3c4e524ca663784d4cf085c465d7",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://github.com/flatpak/flatpak",
@@ -737,8 +737,8 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "tag": "v0.16.0",
-                    "commit": "04ef0944db56ab01307a29aaa7303df6067cb3c0",
+                    "tag": "v0.18.0",
+                    "commit": "07c9c9df9cd1b6b4454ecba21ee58211e9144a4b",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
@@ -787,8 +787,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.7.tar.xz",
-                    "sha256": "42f130f295f5addb6e9e8e74ccfbb709794bd2dfd021293e2875b9481bbd4e88",
+                    "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.8.tar.xz",
+                    "sha256": "277646285818da7b295ef007b2c5ebd815d0930b3ad097505b3ced96965af517",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libspelling"
@@ -818,8 +818,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-builder/48/gnome-builder-48.0.tar.xz",
-                    "sha256": "7afe9a7a3b3c6621768bc46a61d698dd788b3653fb46a708238bdccf4de67ba4",
+                    "url": "https://download.gnome.org/sources/gnome-builder/48/gnome-builder-48.2.tar.xz",
+                    "sha256": "ec1280d47e814a313b74cb927d5a059380544aa0f56e87552978397d6c74cc63",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gnome-builder",
