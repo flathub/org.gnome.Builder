@@ -306,6 +306,7 @@
                     "sha256": "d528b35b2cf90e07dae50e25e12fbadb0eb048f57fd5151cf9f6e98cce1df20e",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "template-glib"
                     }
                 }
