@@ -262,8 +262,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vte/0.81/vte-0.81.0.tar.xz",
-                    "sha256": "d54afc8bbe4a9f53984e17a73f7d3e436b886d71433c247bfd7b9ca658c2ae40",
+                    "url": "https://download.gnome.org/sources/vte/0.80/vte-0.80.0.tar.xz",
+                    "sha256": "267f63739765e568cf8113d0e2ee8f593028946187854bebe268c778e62647c8",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
@@ -302,8 +302,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/template-glib/3.37/template-glib-3.37.0.tar.xz",
-                    "sha256": "21647d5e0502bd67d5ff5fb71b9f070c377e9e7bf7facf12e08c0b26d1170ce5",
+                    "url": "https://download.gnome.org/sources/template-glib/3.36/template-glib-3.36.3.tar.xz",
+                    "sha256": "d528b35b2cf90e07dae50e25e12fbadb0eb048f57fd5151cf9f6e98cce1df20e",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "template-glib"
