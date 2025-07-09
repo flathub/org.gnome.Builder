@@ -361,6 +361,7 @@
                     "sha256": "98a69626aa7646ad455bea7a7f92d2a1ffa47e4559a154a1bfe98c16fa711ee1",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "libdex"
                     }
                 }
