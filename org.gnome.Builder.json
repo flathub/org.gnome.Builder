@@ -286,6 +286,7 @@
                     "sha256": "1e9a9d69761d2109eff5b7c11d8c96b4867ccfaca2b921eded49401192769ec9",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "libpeas"
                     }
                 }
@@ -306,6 +307,7 @@
                     "sha256": "d528b35b2cf90e07dae50e25e12fbadb0eb048f57fd5151cf9f6e98cce1df20e",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "template-glib"
                     }
                 }
@@ -326,6 +328,7 @@
                     "sha256": "965496b6e1314f3468b482a5d80340dc3b0340a5402d7783cad24154aee77396",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "jsonrpc-glib"
                     }
                 }
@@ -792,6 +795,7 @@
                     "sha256": "277646285818da7b295ef007b2c5ebd815d0930b3ad097505b3ced96965af517",
                     "x-checker-data": {
                         "type": "gnome",
+                        "version-scheme": "odd-minor-is-unstable",
                         "name": "libspelling"
                     }
                 }
