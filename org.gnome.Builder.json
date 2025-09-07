@@ -360,8 +360,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libdex/0.10/libdex-0.10.1.tar.xz",
-                    "sha256": "7472e88090db2b228307505edeba4483e872681340cb0404ae64ac3da5bed0a6",
+                    "url": "https://download.gnome.org/sources/libdex/1.0/libdex-1.0.0.tar.xz",
+                    "sha256": "7b8f5c5db3796e14e12e10422e2356766ba830b92815fee70bbc867b5b207f5d",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
@@ -381,8 +381,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libpanel/1.10/libpanel-1.10.0.tar.xz",
-                    "sha256": "578ce512278ff2bb5eeebb55099392c52537a5abd9bd0629567f102532b38b25",
+                    "url": "https://download.gnome.org/sources/libpanel/1.10/libpanel-1.10.1.tar.xz",
+                    "sha256": "936bbe96dfb383556482120fddd4533a52d2f49303328cb694861606492445eb",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libpanel"
@@ -409,8 +409,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ostreedev/ostree.git",
-                    "tag": "v2025.2",
-                    "commit": "1dd64eb264be462475a1163c6fee686c1f191994",
+                    "tag": "v2025.6",
+                    "commit": "82185d9aaf0a79b100378f13a54c3d5d3763a971",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://github.com/flatpak/libportal",
@@ -610,8 +610,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/flatpak-builder.git",
-                    "tag": "1.4.4",
-                    "commit": "f996a7949076ef1dc85c602da85b981b0a173a23",
+                    "tag": "1.4.5",
+                    "commit": "ed24fdee5add29cdeed2577512282f5a356cace5",
                     "x-checker-data": {
                         "type": "git",
                         "is-important": true,
@@ -772,8 +772,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gom/0.5/gom-0.5.3.tar.xz",
-                    "sha256": "069d0909fbdc6b4d27edf7a879366194e3ab508b03548bf5b89ff63546d20177",
+                    "url": "https://download.gnome.org/sources/gom/0.5/gom-0.5.4.tar.xz",
+                    "sha256": "57ba806fe080a937d5664178d21bad7653b2c561ea128187a7b10bc1762b7f65",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gom"
@@ -791,8 +791,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.8.tar.xz",
-                    "sha256": "277646285818da7b295ef007b2c5ebd815d0930b3ad097505b3ced96965af517",
+                    "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.9.tar.xz",
+                    "sha256": "d093fd35ae0f1c98fb58876505287fc0a885e47da9d2411d6d7cd595f34d4ebf",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
