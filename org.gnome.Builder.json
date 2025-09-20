@@ -618,8 +618,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/flatpak-builder.git",
-                    "tag": "1.4.5",
-                    "commit": "ed24fdee5add29cdeed2577512282f5a356cace5",
+                    "tag": "1.4.6",
+                    "commit": "c2c03c4c778f4d9e8586be7a0a0222a71f0cfa67",
                     "x-checker-data": {
                         "type": "git",
                         "is-important": true,
