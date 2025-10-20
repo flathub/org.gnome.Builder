@@ -278,8 +278,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vte/0.82/vte-0.82.0.tar.xz",
-                    "sha256": "b0718db3254730701b43bf5e113cbf8cdb2c14715d32ee1e8a707dc6eb70535f",
+                    "url": "https://download.gnome.org/sources/vte/0.82/vte-0.82.1.tar.xz",
+                    "sha256": "79376d70402d271e2d38424418e1aea72357934d272e321e3906b71706a78e3a",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
@@ -618,8 +618,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/flatpak-builder.git",
-                    "tag": "1.4.6",
-                    "commit": "c2c03c4c778f4d9e8586be7a0a0222a71f0cfa67",
+                    "tag": "1.4.7",
+                    "commit": "a7a5aae277c99b7df068f413ab818854ed5c7af5",
                     "x-checker-data": {
                         "type": "git",
                         "is-important": true,
