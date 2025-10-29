@@ -278,8 +278,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vte/0.82/vte-0.82.0.tar.xz",
-                    "sha256": "b0718db3254730701b43bf5e113cbf8cdb2c14715d32ee1e8a707dc6eb70535f",
+                    "url": "https://download.gnome.org/sources/vte/0.82/vte-0.82.1.tar.xz",
+                    "sha256": "79376d70402d271e2d38424418e1aea72357934d272e321e3906b71706a78e3a",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
@@ -397,8 +397,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libpanel/1.10/libpanel-1.10.2.tar.xz",
-                    "sha256": "cc12e8e10f1e4977bd12ad3ffaedcd52ac176348b4af6fe5da686b96325bfe01",
+                    "url": "https://download.gnome.org/sources/libpanel/1.10/libpanel-1.10.3.tar.xz",
+                    "sha256": "42a01baf8b94440f194ea8342b244bd6992dfb024ca3160c9477ff498ec3a2b6",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libpanel"
@@ -618,8 +618,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/flatpak-builder.git",
-                    "tag": "1.4.6",
-                    "commit": "c2c03c4c778f4d9e8586be7a0a0222a71f0cfa67",
+                    "tag": "1.4.7",
+                    "commit": "a7a5aae277c99b7df068f413ab818854ed5c7af5",
                     "x-checker-data": {
                         "type": "git",
                         "is-important": true,
@@ -750,8 +750,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/d-spy/49/d-spy-49.1.tar.xz",
-                    "sha256": "e26e18120e64d451b61f202cfaa3913627a7031c2a954aecf391c83d83d09d8a",
+                    "url": "https://download.gnome.org/sources/d-spy/49/d-spy-49.2.tar.xz",
+                    "sha256": "b814ff27d828aabcda72f2c62f1b41d62035f743d06fd9a7e3c5c986c4879a69",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "d-spy"
@@ -765,8 +765,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gom/0.5/gom-0.5.4.tar.xz",
-                    "sha256": "57ba806fe080a937d5664178d21bad7653b2c561ea128187a7b10bc1762b7f65",
+                    "url": "https://download.gnome.org/sources/gom/0.5/gom-0.5.5.tar.xz",
+                    "sha256": "ad61f05af2317a7ab1771fcfa816989fbba3b18957d2e0b5dede9ef45f09b534",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gom"
@@ -816,8 +816,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-builder/49/gnome-builder-49.0.tar.xz",
-                    "sha256": "d45990db681f95ee2277be4fa9f2964982707dbdf30130a0bde70234b379f562",
+                    "url": "https://download.gnome.org/sources/gnome-builder/49/gnome-builder-49.1.tar.xz",
+                    "sha256": "3b9e4798388f959e1032c6ace4a5fb7b4e588b6339fce4c22ec26abe869f8a2b",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gnome-builder",
