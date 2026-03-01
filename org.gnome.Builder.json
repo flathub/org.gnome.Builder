@@ -351,42 +351,6 @@
             ]
         },
         {
-            "name": "liburing",
-            "buildsystem": "autotools",
-            "config-opts": [],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/axboe/liburing.git",
-                    "tag": "liburing-2.7"
-                }
-            ]
-        },
-        {
-            "name": "libdex",
-            "buildsystem": "meson",
-            "config-opts": [
-                "--buildtype=release",
-                "-Ddocs=false",
-                "-Dintrospection=enabled",
-                "-Dexamples=false",
-                "-Dtests=false",
-                "-Dsysprof=true"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libdex/1.0/libdex-1.0.0.tar.xz",
-                    "sha256": "7b8f5c5db3796e14e12e10422e2356766ba830b92815fee70bbc867b5b207f5d",
-                    "x-checker-data": {
-                        "type": "gnome",
-                        "version-scheme": "odd-minor-is-unstable",
-                        "name": "libdex"
-                    }
-                }
-            ]
-        },
-        {
             "name": "libpanel",
             "buildsystem": "meson",
             "builddir": true,
