@@ -400,52 +400,6 @@
             ]
         },
         {
-            "name": "libyaml",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/yaml/libyaml.git",
-                    "tag": "0.2.5"
-                }
-            ]
-        },
-        {
-            "name": "libxmlb",
-            "config-opts": [
-                "--libdir=/app/lib",
-                "--buildtype=release",
-                "-Dgtkdoc=false",
-                "-Dintrospection=false",
-                "-Dtests=false",
-                "-Dcli=false"
-            ],
-            "buildsystem": "meson",
-            "builddir": true,
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/hughsie/libxmlb.git",
-                    "tag": "0.3.8"
-                }
-            ]
-        },
-        {
-            "name": "libstemmer",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-                "-DCMAKE_INSTALL_LIBDIR:PATH=/app/lib",
-                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/zvelo/libstemmer",
-                    "tag": "78c149a3a6f262a35c7f7351d3f77b725fc646cf"
-                }
-            ]
-        },
-        {
             "name": "polkit",
             "buildsystem": "meson",
             "config-opts": [
