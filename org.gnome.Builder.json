@@ -199,7 +199,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libgit2/libgit2.git",
-                    "tag": "v1.9.1"
+                    "commit": "ca225744b992bf2bf24e9a2eb357ddef78179667",
+                    "tag": "v1.9.2"
                 }
             ]
         },
