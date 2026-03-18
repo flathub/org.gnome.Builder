@@ -163,6 +163,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/universal-ctags/ctags.git",
+                    "commit": "b35c300972c617ad7cfc0f90cf653c3b95145d31",
                     "tag": "p5.9.20210919.0"
                 }
             ]
@@ -182,6 +183,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libssh2/libssh2.git",
+                    "commit": "a312b43325e3383c865a87bb1d26cb52e3292641",
                     "tag": "libssh2-1.11.1"
                 }
             ]
@@ -235,6 +237,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/editorconfig/editorconfig-core-c.git",
+                    "commit": "e082c947e7f7b14240195d55c060a6e1eda1b0a1",
                     "tag": "v0.12.9"
                 }
             ]
@@ -597,7 +600,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/chergert/deviced.git",
-                    "tag": "8bb61199a689bfc02fe07b02edda2039d1999d1f"
+                    "commit": "8bb61199a689bfc02fe07b02edda2039d1999d1f"
                 }
             ]
         },
@@ -640,6 +643,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/htacg/tidy-html5.git",
+                    "commit": "1ca37471b48a3498f985509828cb3cf85ea129f8",
                     "tag": "5.8.0"
                 }
             ]
@@ -659,6 +663,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/commonmark/cmark",
+                    "commit": "a8da5a2f252b96eca60ae8bada1a9ba059a38401",
                     "tag": "0.30.2"
                 }
             ]
