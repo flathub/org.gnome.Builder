@@ -278,8 +278,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/vte/0.82/vte-0.82.1.tar.xz",
-                    "sha256": "79376d70402d271e2d38424418e1aea72357934d272e321e3906b71706a78e3a",
+                    "url": "https://download.gnome.org/sources/vte/0.84/vte-0.84.0.tar.xz",
+                    "sha256": "0414e31583836aeb7878da25f67c515f7e8879917ecc37c92e26b83e8d8fc3e3",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
@@ -298,8 +298,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libpeas/2.2/libpeas-2.2.0.tar.xz",
-                    "sha256": "c2887233f084a69fabfc7fa0140d410491863d7050afb28677f9a553b2580ad9",
+                    "url": "https://download.gnome.org/sources/libpeas/2.2/libpeas-2.2.1.tar.xz",
+                    "sha256": "589eca89b437006edf3755478df037c740a2a84cfa5d202dbad6095e828e2488",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
@@ -319,8 +319,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/template-glib/3.38/template-glib-3.38.0.tar.xz",
-                    "sha256": "40d00dc223dcf2eb7f2ec422f7dec5a67373a0ca1101abca0f49c62f050cb312",
+                    "url": "https://download.gnome.org/sources/template-glib/3.40/template-glib-3.40.0.tar.xz",
+                    "sha256": "e533ec2f6c24cc6df66ac55ac824fadd1b4a5f433a11cbf3a6b25815c0cfcfd5",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
@@ -361,8 +361,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libpanel/1.10/libpanel-1.10.3.tar.xz",
-                    "sha256": "42a01baf8b94440f194ea8342b244bd6992dfb024ca3160c9477ff498ec3a2b6",
+                    "url": "https://download.gnome.org/sources/libpanel/1.10/libpanel-1.10.4.tar.xz",
+                    "sha256": "593888a7691f0af8aaa6e193c9e14afa86a810c0c2f27515c6d813f18733b1cd",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "libpanel"
@@ -389,8 +389,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ostreedev/ostree.git",
-                    "tag": "v2025.6",
-                    "commit": "82185d9aaf0a79b100378f13a54c3d5d3763a971",
+                    "tag": "v2025.7",
+                    "commit": "134d144cb52ff018cfedfb936b661189bccc76e6",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://github.com/flatpak/libportal",
@@ -442,8 +442,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/projectatomic/bubblewrap/archive/refs/tags/v0.11.0.tar.gz",
-                    "sha256": "cfeeb15fcc47d177d195f06fdf0847e93ee3aa6bf46f6ac0a141fa142759e2c3",
+                    "url": "https://github.com/projectatomic/bubblewrap/archive/refs/tags/v0.11.1.tar.gz",
+                    "sha256": "fb6ebf0264dfe9fb88777d352deeedf5aecf2e36e78da148157036b647f86e0f",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 10937,
@@ -513,8 +513,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/flatpak.git",
-                    "tag": "1.16.1",
-                    "commit": "b676905d91aa3c4e524ca663784d4cf085c465d7",
+                    "tag": "1.16.3",
+                    "commit": "b76f2533c72d65e20bfbc6ef0fb2f6ae9939013d",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://github.com/flatpak/flatpak",
@@ -668,8 +668,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/d-spy/49/d-spy-49.2.tar.xz",
-                    "sha256": "b814ff27d828aabcda72f2c62f1b41d62035f743d06fd9a7e3c5c986c4879a69",
+                    "url": "https://download.gnome.org/sources/d-spy/50/d-spy-50.0.tar.xz",
+                    "sha256": "1bddc86d8a2cf67b4f652dc461ccd8353112f088753420037c75f5454deaad10",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "d-spy"
@@ -683,8 +683,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gom/0.5/gom-0.5.5.tar.xz",
-                    "sha256": "ad61f05af2317a7ab1771fcfa816989fbba3b18957d2e0b5dede9ef45f09b534",
+                    "url": "https://download.gnome.org/sources/gom/0.5/gom-0.5.6.tar.xz",
+                    "sha256": "4d7a5e268698c8e7e40603e36e9e3a2b76133931ce1b637c1136301491b54cc3",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gom"
@@ -702,8 +702,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.9.tar.xz",
-                    "sha256": "d093fd35ae0f1c98fb58876505287fc0a885e47da9d2411d6d7cd595f34d4ebf",
+                    "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.10.tar.xz",
+                    "sha256": "56e3f01a3a18b575beea4c34349f99cdaba316e1f7c271b1231f7bcf5d9af73b",
                     "x-checker-data": {
                         "type": "gnome",
                         "version-scheme": "odd-minor-is-unstable",
@@ -734,8 +734,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-builder/49/gnome-builder-49.1.tar.xz",
-                    "sha256": "3b9e4798388f959e1032c6ace4a5fb7b4e588b6339fce4c22ec26abe869f8a2b",
+                    "url": "https://download.gnome.org/sources/gnome-builder/50/gnome-builder-50.0.tar.xz",
+                    "sha256": "46d54fd13f4f4bdb6eed7d004b499d0b6d9a76a6fafc68ad16c389953fd92f46",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gnome-builder",
