@@ -467,8 +467,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/flatpak/xdg-dbus-proxy/archive/refs/tags/0.1.6.tar.gz",
-                    "sha256": "ee9c1d665f4e3b025a83d522d478ff7930070f2817fc2cb446db0dca93c990b1",
+                    "url": "https://github.com/flatpak/xdg-dbus-proxy/archive/refs/tags/0.1.7.tar.gz",
+                    "sha256": "232d2eb9b456fa1e307322da1bfeb4849eb410750a2a16a5de51ed2c2eb919e6",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 58434,
@@ -517,8 +517,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/flatpak.git",
-                    "tag": "1.16.3",
-                    "commit": "b76f2533c72d65e20bfbc6ef0fb2f6ae9939013d",
+                    "tag": "1.16.6",
+                    "commit": "e761a8885453c217a931281092a641ebbdd0a0c6",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://github.com/flatpak/flatpak",
@@ -540,8 +540,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/flatpak-builder.git",
-                    "tag": "1.4.7",
-                    "commit": "a7a5aae277c99b7df068f413ab818854ed5c7af5",
+                    "tag": "1.4.8",
+                    "commit": "70421c1586e9046470c9a788fa3f3390d5431248",
                     "x-checker-data": {
                         "type": "git",
                         "is-important": true,
