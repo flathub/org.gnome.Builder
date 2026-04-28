@@ -393,8 +393,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ostreedev/ostree.git",
-                    "tag": "v2025.7",
-                    "commit": "134d144cb52ff018cfedfb936b661189bccc76e6",
+                    "tag": "v2026.1",
+                    "commit": "84fcfe17adcc69b926e8205782c1f735c09bfdd9",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://github.com/flatpak/libportal",
@@ -517,8 +517,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/flatpak.git",
-                    "tag": "1.16.3",
-                    "commit": "b76f2533c72d65e20bfbc6ef0fb2f6ae9939013d",
+                    "tag": "1.16.6",
+                    "commit": "e761a8885453c217a931281092a641ebbdd0a0c6",
                     "x-checker-data": {
                         "type": "git",
                         "url": "https://github.com/flatpak/flatpak",
@@ -540,8 +540,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/flatpak/flatpak-builder.git",
-                    "tag": "1.4.7",
-                    "commit": "a7a5aae277c99b7df068f413ab818854ed5c7af5",
+                    "tag": "1.4.8",
+                    "commit": "70421c1586e9046470c9a788fa3f3390d5431248",
                     "x-checker-data": {
                         "type": "git",
                         "is-important": true,
