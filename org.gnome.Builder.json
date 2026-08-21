@@ -732,7 +732,7 @@
                 "-Dchannel=flatpak-stable",
                 "-Dnetwork_tests=false",
                 "-Dplugin_deviced=true",
-                "-Dgnome_sdk_version=48"
+                "-Dgnome_sdk_version=50"
             ],
             "cleanup": [
                 "/share/gnome-builder/gir-1.0"
