@@ -542,12 +542,19 @@
                     "url": "https://github.com/flatpak/flatpak-builder.git",
                     "tag": "1.4.7",
                     "commit": "a7a5aae277c99b7df068f413ab818854ed5c7af5",
+                    "disable-submodules": true,
                     "x-checker-data": {
                         "type": "git",
                         "is-important": true,
                         "url": "https://github.com/flatpak/flatpak-builder.git",
                         "tag-pattern": "^([\\d]+\\.\\d*[02468][\\d.]*)$"
                     }
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/GNOME/libglnx.git",
+                    "commit": "ccea836b799256420788c463a638ded0636b1632",
+                    "dest": "subprojects/libglnx"
                 }
             ]
         },
